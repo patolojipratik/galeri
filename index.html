@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Patoloji Pratik Slaytlari</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f4f6;color:#172033;font-family:system-ui,Segoe UI,sans-serif}
+header{background:#172033;color:#fff;padding:28px 18px}header div{max-width:1200px;margin:auto}h1{margin:0 0 8px}
+main{max-width:1200px;margin:auto;padding:22px 18px}#q{width:100%;padding:14px 16px;border:1px solid #ccd2dc;border-radius:10px;font-size:16px;margin-bottom:20px}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.card{display:block;background:#fff;color:inherit;text-decoration:none;border-radius:13px;overflow:hidden;box-shadow:0 4px 16px #18203316;transition:.15s}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 24px #18203325}.card img{width:100%;height:190px;object-fit:contain;background:#fff}
+.text{padding:14px}.id{font-weight:800;color:#2458a6}.diagnosis{font-size:18px;font-weight:700;margin-top:6px}.organ,.description{color:#626b79;margin-top:5px}#count{margin:0 0 14px;color:#626b79}
+</style></head><body>
+<header><div><h1>Patoloji Pratik Slaytlari</h1><div>Sanal mikroskop galerisi</div></div></header>
+<main><input id="q" type="search" placeholder="Numara, organ veya tani ara"><p id="count"></p><div id="grid"></div></main>
+<script>
+let all=[];const grid=document.getElementById('grid'),q=document.getElementById('q'),count=document.getElementById('count');
+function draw(){const term=q.value.toLocaleLowerCase('tr');const rows=all.filter(x=>JSON.stringify(x).toLocaleLowerCase('tr').includes(term));count.textContent=rows.length+' slayt';grid.innerHTML=rows.map(x=>`<a class="card" href="${x.page_url}"><img loading="lazy" src="${x.thumbnail_url}" alt="${x.gallery_id}"><div class="text"><div class="id">${x.gallery_id}</div><div class="diagnosis">${x.diagnosis||x.title}</div><div class="organ">${x.organ||''}</div><div class="description">${x.description||''}</div></div></a>`).join('')}
+fetch('slides.json?'+Date.now()).then(r=>r.json()).then(x=>{all=x;draw()});q.addEventListener('input',draw);
+</script></body></html>
