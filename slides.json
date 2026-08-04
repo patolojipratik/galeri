@@ -218,5 +218,16 @@
     "page_url": "https://patolojipratik.github.io/gallery-020/",
     "thumbnail_url": "https://patolojipratik.github.io/gallery-020/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-020/label.jpg"
+  },
+  {
+    "gallery_id": "gallery-021",
+    "number": 21,
+    "title": "Pratik slayti 021",
+    "organ": "",
+    "diagnosis": "",
+    "description": "",
+    "page_url": "https://patolojipratik.github.io/gallery-021/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-021/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-021/label.jpg"
   }
 ]
