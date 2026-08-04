@@ -401,5 +401,18 @@
     "page_url": "https://patolojipratik.github.io/gallery-031/",
     "thumbnail_url": "https://patolojipratik.github.io/gallery-031/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-031/label.jpg"
+  },
+  {
+    "gallery_id": "gallery-032",
+    "number": 32,
+    "title": "Pratik slayti 032",
+    "organ": "",
+    "diagnosis": "",
+    "description": "",
+    "tags": "",
+    "source_format": "KFB",
+    "page_url": "https://patolojipratik.github.io/gallery-032/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-032/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-032/label.jpg"
   }
 ]
