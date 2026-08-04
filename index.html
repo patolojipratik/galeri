@@ -1,19 +1,52 @@
 <!doctype html>
 <html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Patoloji Pratik Slaytlari</title>
+<title>Patoloji Pratik Slaytları</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f3f4f6;color:#172033;font-family:system-ui,Segoe UI,sans-serif}
-header{background:#172033;color:#fff;padding:28px 18px}header div{max-width:1200px;margin:auto}h1{margin:0 0 8px}
-main{max-width:1200px;margin:auto;padding:22px 18px}#q{width:100%;padding:14px 16px;border:1px solid #ccd2dc;border-radius:10px;font-size:16px;margin-bottom:20px}
-#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
-.card{display:block;background:#fff;color:inherit;text-decoration:none;border-radius:13px;overflow:hidden;box-shadow:0 4px 16px #18203316;transition:.15s}
-.card:hover{transform:translateY(-2px);box-shadow:0 8px 24px #18203325}.card img{width:100%;height:190px;object-fit:contain;background:#fff}
-.text{padding:14px}.id{font-weight:800;color:#2458a6}.diagnosis{font-size:18px;font-weight:700;margin-top:6px}.organ,.description{color:#626b79;margin-top:5px}#count{margin:0 0 14px;color:#626b79}
+*{box-sizing:border-box}body{margin:0;background:#eef2f7;color:#16243a;font-family:Inter,system-ui,Segoe UI,sans-serif}
+header{background:linear-gradient(135deg,#102847,#1c4a76);color:#fff;padding:30px 18px;box-shadow:0 8px 24px #0f254033}
+.header-inner{max-width:1240px;margin:auto;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+h1{margin:0 0 7px;font-size:clamp(27px,4vw,42px)}.subtitle{opacity:.86}
+.managed{color:#dbe7f5;background:#ffffff12;border:1px solid #ffffff38;border-radius:11px;padding:10px 14px;font-size:13px}
+main{max-width:1240px;margin:auto;padding:24px 18px 40px}
+.tools{display:flex;gap:12px;align-items:center;margin-bottom:18px;flex-wrap:wrap}
+#q{flex:1;min-width:260px;padding:14px 16px;border:1px solid #c9d3e2;border-radius:11px;font-size:16px;box-shadow:0 2px 8px #18324f0b}
+#count{margin:0;color:#596779;font-weight:650}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:19px}
+.card{display:block;background:#fff;color:inherit;text-decoration:none;border-radius:15px;overflow:hidden;border:1px solid #dce4ef;box-shadow:0 5px 18px #18203314;transition:.16s}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 28px #18203325;border-color:#b9c9dd}
+.card img{width:100%;height:194px;object-fit:contain;background:#fff}
+.text{padding:15px}.topline{display:flex;justify-content:space-between;gap:8px;align-items:center}.id{font-weight:800;color:#245a9f}.fmt{font-size:12px;color:#708095;background:#edf2f8;border-radius:999px;padding:3px 8px}
+.diagnosis{font-size:18px;font-weight:750;margin-top:7px;line-height:1.28}.organ,.description{color:#626f80;margin-top:6px;line-height:1.4}.description{font-size:14px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.tag{font-size:12px;color:#31577f;background:#edf4fb;border:1px solid #d3e2f2;border-radius:999px;padding:3px 8px}
+.empty{grid-column:1/-1;background:#fff;padding:28px;border-radius:14px;text-align:center;color:#667386}
+footer{max-width:1240px;margin:0 auto;padding:0 18px 32px;color:#748094;font-size:13px}
 </style></head><body>
-<header><div><h1>Patoloji Pratik Slaytlari</h1><div>Sanal mikroskop galerisi</div></div></header>
-<main><input id="q" type="search" placeholder="Numara, organ veya tani ara"><p id="count"></p><div id="grid"></div></main>
+<header><div class="header-inner"><div><h1>Patoloji Pratik Slaytları</h1><div class="subtitle">Sanal mikroskop galerisi</div></div><div class="managed">Bilgiler masaüstü uygulamasından yönetilir</div></div></header>
+<main><div class="tools"><input id="q" type="search" placeholder="Numara, organ, tanı, açıklama veya etiket ara"><p id="count"></p></div><div id="grid"></div></main>
+<footer>Başlık, organ, tanı, açıklama ve etiketler Patoloji Pratik Slayt Yayıncısı ile güncellenir.</footer>
 <script>
 let all=[];const grid=document.getElementById('grid'),q=document.getElementById('q'),count=document.getElementById('count');
-function draw(){const term=q.value.toLocaleLowerCase('tr');const rows=all.filter(x=>JSON.stringify(x).toLocaleLowerCase('tr').includes(term));count.textContent=rows.length+' slayt';grid.innerHTML=rows.map(x=>`<a class="card" href="${x.page_url}"><img loading="lazy" src="${x.thumbnail_url}" alt="${x.gallery_id}"><div class="text"><div class="id">${x.gallery_id}</div><div class="diagnosis">${x.diagnosis||x.title}</div><div class="organ">${x.organ||''}</div><div class="description">${x.description||''}</div></div></a>`).join('')}
-fetch('slides.json?'+Date.now()).then(r=>r.json()).then(x=>{all=x;draw()});q.addEventListener('input',draw);
+function esc(x){return String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function parseCSV(text){
+  const rows=[];let row=[],cell='',quoted=false;
+  for(let i=0;i<text.length;i++){const ch=text[i];
+    if(quoted){if(ch==='"'&&text[i+1]==='"'){cell+='"';i++;}else if(ch==='"')quoted=false;else cell+=ch;}
+    else if(ch==='"')quoted=true;else if(ch===','){row.push(cell);cell='';}
+    else if(ch==='\n'){row.push(cell.replace(/\r$/,''));rows.push(row);row=[];cell='';}else cell+=ch;
+  }
+  if(cell||row.length){row.push(cell.replace(/\r$/,''));rows.push(row);}
+  const head=(rows.shift()||[]).map(x=>x.replace(/^\uFEFF/,''));
+  return rows.filter(r=>r.some(Boolean)).map(r=>Object.fromEntries(head.map((h,i)=>[h,r[i]||''])));
+}
+function draw(){
+ const term=q.value.toLocaleLowerCase('tr');
+ const rows=all.filter(x=>JSON.stringify(x).toLocaleLowerCase('tr').includes(term));
+ count.textContent=rows.length+' slayt';
+ grid.innerHTML=rows.length?rows.map(x=>{const tags=String(x.tags||'').split(',').map(t=>t.trim()).filter(Boolean);return `<a class="card" href="${esc(x.page_url)}"><img loading="lazy" src="${esc(x.thumbnail_url)}" alt="${esc(x.gallery_id)}"><div class="text"><div class="topline"><div class="id">${esc(x.gallery_id)}</div><div class="fmt">${esc(x.source_format||'')}</div></div><div class="diagnosis">${esc(x.diagnosis||x.title)}</div><div class="organ">${esc(x.organ||'')}</div><div class="description">${esc(x.description||'')}</div>${tags.length?`<div class="tags">${tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>`:''}</div></a>`;}).join(''):'<div class="empty">Aramayla eşleşen slayt bulunamadı.</div>';
+}
+Promise.all([
+ fetch('slides.json?'+Date.now()).then(r=>r.json()),
+ fetch("slayt_bilgileri.csv"+'?'+Date.now()).then(r=>r.text()).then(parseCSV).catch(()=>[])
+]).then(([base,edits])=>{const by=Object.fromEntries(edits.map(x=>[x.gallery_id,x]));all=base.map(x=>Object.assign({},x,by[x.gallery_id]||{}));draw();}).catch(e=>{grid.innerHTML='<div class="empty">Galeri bilgileri yüklenemedi.</div>';console.error(e)});
+q.addEventListener('input',draw);
 </script></body></html>
