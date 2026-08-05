@@ -2,6 +2,7 @@
   {
     "gallery_id": "gallery-001",
     "number": 1,
+    "display_order": 1,
     "title": "Reaktif lenf nodu",
     "organ": "Lenf nodu",
     "diagnosis": "Reaktif lenf nodu",
@@ -16,6 +17,7 @@
   {
     "gallery_id": "gallery-002",
     "number": 2,
+    "display_order": 2,
     "title": "Plazmasitom",
     "organ": "Deri",
     "diagnosis": "Plazmasitom",
@@ -30,6 +32,7 @@
   {
     "gallery_id": "gallery-003",
     "number": 3,
+    "display_order": 3,
     "title": "Akut apandisit",
     "organ": "Appendiks",
     "diagnosis": "Akut apandisit",
@@ -44,6 +47,7 @@
   {
     "gallery_id": "gallery-004",
     "number": 4,
+    "display_order": 4,
     "title": "Adenokarsinom",
     "organ": "Mide",
     "diagnosis": "",
@@ -58,6 +62,7 @@
   {
     "gallery_id": "gallery-005",
     "number": 5,
+    "display_order": 5,
     "title": "Tübüler adenom",
     "organ": "Kalın barsak",
     "diagnosis": "",
@@ -72,6 +77,7 @@
   {
     "gallery_id": "gallery-006",
     "number": 6,
+    "display_order": 6,
     "title": "GİST",
     "organ": "İnce barsak",
     "diagnosis": "",
@@ -86,6 +92,7 @@
   {
     "gallery_id": "gallery-007",
     "number": 7,
+    "display_order": 7,
     "title": "Hodgkin lenfoma",
     "organ": "Lenf nodu",
     "diagnosis": "",
@@ -100,6 +107,7 @@
   {
     "gallery_id": "gallery-008",
     "number": 8,
+    "display_order": 8,
     "title": "Helikobakter Pilori",
     "organ": "Mide",
     "diagnosis": "",
@@ -114,6 +122,7 @@
   {
     "gallery_id": "gallery-009",
     "number": 9,
+    "display_order": 9,
     "title": "KLL",
     "organ": "Lenf nodu",
     "diagnosis": "",
@@ -128,6 +137,7 @@
   {
     "gallery_id": "gallery-010",
     "number": 10,
+    "display_order": 10,
     "title": "Artefakt",
     "organ": "",
     "diagnosis": "",
@@ -142,6 +152,7 @@
   {
     "gallery_id": "gallery-011",
     "number": 11,
+    "display_order": 11,
     "title": "Gastrit",
     "organ": "Mide",
     "diagnosis": "",
@@ -156,6 +167,7 @@
   {
     "gallery_id": "gallery-012",
     "number": 12,
+    "display_order": 12,
     "title": "Matur kistik teratom",
     "organ": "Over",
     "diagnosis": "",
@@ -170,6 +182,7 @@
   {
     "gallery_id": "gallery-013",
     "number": 13,
+    "display_order": 13,
     "title": "Meningiom",
     "organ": "MSS",
     "diagnosis": "",
@@ -184,6 +197,7 @@
   {
     "gallery_id": "gallery-014",
     "number": 14,
+    "display_order": 14,
     "title": "Tüberküloz",
     "organ": "Lenf nodu",
     "diagnosis": "",
@@ -198,6 +212,7 @@
   {
     "gallery_id": "gallery-015",
     "number": 15,
+    "display_order": 15,
     "title": "Glioblastom",
     "organ": "MSS",
     "diagnosis": "",
@@ -212,6 +227,7 @@
   {
     "gallery_id": "gallery-016",
     "number": 16,
+    "display_order": 16,
     "title": "Ependimom",
     "organ": "MSS",
     "diagnosis": "",
@@ -226,6 +242,7 @@
   {
     "gallery_id": "gallery-017",
     "number": 17,
+    "display_order": 17,
     "title": "Warthin Tümörü",
     "organ": "Parotis",
     "diagnosis": "",
@@ -240,6 +257,7 @@
   {
     "gallery_id": "gallery-018",
     "number": 18,
+    "display_order": 18,
     "title": "Kronik Kolesistit",
     "organ": "Safra kesesi",
     "diagnosis": "",
@@ -254,6 +272,7 @@
   {
     "gallery_id": "gallery-019",
     "number": 19,
+    "display_order": 19,
     "title": "Kronik pyelonefrit",
     "organ": "Böbrek",
     "diagnosis": "",
@@ -268,6 +287,7 @@
   {
     "gallery_id": "gallery-020",
     "number": 20,
+    "display_order": 20,
     "title": "Pnömoni",
     "organ": "Akciğer",
     "diagnosis": "",
@@ -282,6 +302,7 @@
   {
     "gallery_id": "gallery-021",
     "number": 21,
+    "display_order": 21,
     "title": "Adenokarsinom",
     "organ": "Akciğer",
     "diagnosis": "",
@@ -296,6 +317,7 @@
   {
     "gallery_id": "gallery-022",
     "number": 22,
+    "display_order": 22,
     "title": "Fibrokistik değişiklikler",
     "organ": "Meme",
     "diagnosis": "",
@@ -310,6 +332,7 @@
   {
     "gallery_id": "gallery-023",
     "number": 23,
+    "display_order": 23,
     "title": "İnvaziv meme karsinomu",
     "organ": "Meme",
     "diagnosis": "",
@@ -324,6 +347,7 @@
   {
     "gallery_id": "gallery-024",
     "number": 24,
+    "display_order": 24,
     "title": "Disgerminom",
     "organ": "Over",
     "diagnosis": "",
@@ -338,6 +362,7 @@
   {
     "gallery_id": "gallery-025",
     "number": 25,
+    "display_order": 25,
     "title": "Fibroadenom",
     "organ": "Meme",
     "diagnosis": "",
@@ -352,6 +377,7 @@
   {
     "gallery_id": "gallery-026",
     "number": 26,
+    "display_order": 26,
     "title": "Amfizem",
     "organ": "Akciğer",
     "diagnosis": "",
@@ -366,6 +392,7 @@
   {
     "gallery_id": "gallery-027",
     "number": 27,
+    "display_order": 27,
     "title": "Skuamöz hücreli karsinom",
     "organ": "Akciğer",
     "diagnosis": "",
@@ -380,6 +407,7 @@
   {
     "gallery_id": "gallery-028",
     "number": 28,
+    "display_order": 28,
     "title": "Nazal polip",
     "organ": "Nazal mukoza",
     "diagnosis": "",
@@ -394,6 +422,7 @@
   {
     "gallery_id": "gallery-029",
     "number": 29,
+    "display_order": 29,
     "title": "Akut apandisit",
     "organ": "Appendiks",
     "diagnosis": "",
@@ -408,6 +437,7 @@
   {
     "gallery_id": "gallery-030",
     "number": 30,
+    "display_order": 30,
     "title": "Trombüs",
     "organ": "Hemoroid",
     "diagnosis": "",
@@ -422,6 +452,7 @@
   {
     "gallery_id": "gallery-031",
     "number": 31,
+    "display_order": 31,
     "title": "Yabancı cisim reaksiyonu",
     "organ": "Yumuşak doku",
     "diagnosis": "",
@@ -436,6 +467,7 @@
   {
     "gallery_id": "gallery-032",
     "number": 32,
+    "display_order": 32,
     "title": "Endometrial hiperplazi",
     "organ": "Endometrium",
     "diagnosis": "",
@@ -450,6 +482,7 @@
   {
     "gallery_id": "gallery-033",
     "number": 33,
+    "display_order": 33,
     "title": "Yağlanma",
     "organ": "Karaciğer",
     "diagnosis": "Karaciğer yağlanması",
@@ -464,6 +497,7 @@
   {
     "gallery_id": "gallery-034",
     "number": 34,
+    "display_order": 34,
     "title": "Atrofi",
     "organ": "Çizgili kas",
     "diagnosis": "Çizgili kas atrofisi",
@@ -478,6 +512,7 @@
   {
     "gallery_id": "gallery-035",
     "number": 35,
+    "display_order": 35,
     "title": "Siroz",
     "organ": "Karaciğer",
     "diagnosis": "Karaciğer Sirozı",
@@ -492,6 +527,7 @@
   {
     "gallery_id": "gallery-036",
     "number": 36,
+    "display_order": 36,
     "title": "Hepatosellüller karsinom HCC",
     "organ": "Karaciğer",
     "diagnosis": "",
@@ -506,6 +542,7 @@
   {
     "gallery_id": "gallery-037",
     "number": 37,
+    "display_order": 37,
     "title": "Seminom",
     "organ": "Testis",
     "diagnosis": "",
@@ -520,6 +557,7 @@
   {
     "gallery_id": "gallery-038",
     "number": 38,
+    "display_order": 38,
     "title": "Kist hidatik",
     "organ": "Karaciğer",
     "diagnosis": "",
@@ -534,6 +572,7 @@
   {
     "gallery_id": "gallery-039",
     "number": 39,
+    "display_order": 39,
     "title": "Benign prostat hiperplazisi BPH",
     "organ": "Prostat",
     "diagnosis": "",
@@ -548,6 +587,7 @@
   {
     "gallery_id": "gallery-040",
     "number": 40,
+    "display_order": 40,
     "title": "Adenokarsinom",
     "organ": "Prostat",
     "diagnosis": "Prostat adenokarsinomu",
@@ -562,6 +602,7 @@
   {
     "gallery_id": "gallery-041",
     "number": 41,
+    "display_order": 41,
     "title": "Leiomyosarkom",
     "organ": "Uterus",
     "diagnosis": "",
@@ -576,6 +617,7 @@
   {
     "gallery_id": "gallery-042",
     "number": 42,
+    "display_order": 42,
     "title": "Leiomyom",
     "organ": "Uterus",
     "diagnosis": "",
@@ -590,6 +632,7 @@
   {
     "gallery_id": "gallery-043",
     "number": 43,
+    "display_order": 43,
     "title": "Endoservikal polip",
     "organ": "Uterus",
     "diagnosis": "",
@@ -604,6 +647,7 @@
   {
     "gallery_id": "gallery-044",
     "number": 44,
+    "display_order": 44,
     "title": "Tiroid papiller karsinom",
     "organ": "Tiroid",
     "diagnosis": "",
@@ -618,6 +662,7 @@
   {
     "gallery_id": "gallery-045",
     "number": 45,
+    "display_order": 45,
     "title": "Benign tiroid nodülü",
     "organ": "Tiroid",
     "diagnosis": "",
@@ -632,6 +677,7 @@
   {
     "gallery_id": "gallery-046",
     "number": 46,
+    "display_order": 46,
     "title": "Osteom",
     "organ": "Yassı kemik",
     "diagnosis": "",
@@ -646,6 +692,7 @@
   {
     "gallery_id": "gallery-047",
     "number": 47,
+    "display_order": 47,
     "title": "Lipom",
     "organ": "Yumuşak doku",
     "diagnosis": "",
@@ -660,6 +707,7 @@
   {
     "gallery_id": "gallery-048",
     "number": 48,
+    "display_order": 48,
     "title": "Peomorfik hücreli sarkom, MFH",
     "organ": "Yumuşak doku",
     "diagnosis": "",
@@ -674,6 +722,7 @@
   {
     "gallery_id": "gallery-049",
     "number": 49,
+    "display_order": 49,
     "title": "Nodüler tenosinovit",
     "organ": "Yumuşak doku",
     "diagnosis": "",
@@ -688,6 +737,7 @@
   {
     "gallery_id": "gallery-050",
     "number": 50,
+    "display_order": 50,
     "title": "Kemiğin dev hücreli tümörü",
     "organ": "Kemik",
     "diagnosis": "",
@@ -702,6 +752,7 @@
   {
     "gallery_id": "gallery-051",
     "number": 51,
+    "display_order": 51,
     "title": "Bazal hücreli karsinom BCC",
     "organ": "Deri",
     "diagnosis": "",
@@ -716,6 +767,7 @@
   {
     "gallery_id": "gallery-052",
     "number": 52,
+    "display_order": 52,
     "title": "Skuamöz hücreli karsinom",
     "organ": "Deri",
     "diagnosis": "",
@@ -730,6 +782,7 @@
   {
     "gallery_id": "gallery-053",
     "number": 53,
+    "display_order": 53,
     "title": "Skuamöz papillom",
     "organ": "Uvula",
     "diagnosis": "",
@@ -744,6 +797,7 @@
   {
     "gallery_id": "gallery-054",
     "number": 54,
+    "display_order": 54,
     "title": "Şeffaf hücreli renal hücreli karsinom",
     "organ": "Böbrek",
     "diagnosis": "",
@@ -758,6 +812,7 @@
   {
     "gallery_id": "gallery-055",
     "number": 55,
+    "display_order": 55,
     "title": "Adenokarsinom",
     "organ": "Kalın barsak",
     "diagnosis": "",
@@ -772,6 +827,7 @@
   {
     "gallery_id": "gallery-056",
     "number": 56,
+    "display_order": 56,
     "title": "Epidermoid kist",
     "organ": "Deri",
     "diagnosis": "",
@@ -786,6 +842,7 @@
   {
     "gallery_id": "gallery-057",
     "number": 57,
+    "display_order": 57,
     "title": "Pepiller ürotelyal karsinom",
     "organ": "Mesane",
     "diagnosis": "",
@@ -800,6 +857,7 @@
   {
     "gallery_id": "gallery-058",
     "number": 58,
+    "display_order": 58,
     "title": "Kromofob renal hücreli karsinom",
     "organ": "Böbrek",
     "diagnosis": "",
@@ -814,6 +872,7 @@
   {
     "gallery_id": "gallery-059",
     "number": 59,
+    "display_order": 59,
     "title": "Liken planus",
     "organ": "Deri",
     "diagnosis": "",
@@ -828,6 +887,7 @@
   {
     "gallery_id": "gallery-060",
     "number": 60,
+    "display_order": 60,
     "title": "Perivasküler dermatit",
     "organ": "Deri",
     "diagnosis": "",
@@ -842,6 +902,7 @@
   {
     "gallery_id": "gallery-061",
     "number": 61,
+    "display_order": 61,
     "title": "Psoriasis",
     "organ": "Deri",
     "diagnosis": "",
@@ -856,6 +917,7 @@
   {
     "gallery_id": "gallery-062",
     "number": 62,
+    "display_order": 62,
     "title": "Kaposi sarkomu",
     "organ": "Deri",
     "diagnosis": "",
@@ -870,6 +932,7 @@
   {
     "gallery_id": "gallery-063",
     "number": 63,
+    "display_order": 63,
     "title": "Dev hücreli vaskülit",
     "organ": "Arter",
     "diagnosis": "",
@@ -884,6 +947,7 @@
   {
     "gallery_id": "gallery-064",
     "number": 64,
+    "display_order": 64,
     "title": "Anjiokeratom",
     "organ": "Deri",
     "diagnosis": "",
@@ -898,6 +962,7 @@
   {
     "gallery_id": "gallery-065",
     "number": 65,
+    "display_order": 65,
     "title": "Böbrek RCC silinecek",
     "organ": "",
     "diagnosis": "",
@@ -912,6 +977,7 @@
   {
     "gallery_id": "gallery-066",
     "number": 66,
+    "display_order": 66,
     "title": "Şeffaf hücreli renal hücreli karsinom",
     "organ": "Böbrek",
     "diagnosis": "",
@@ -926,6 +992,7 @@
   {
     "gallery_id": "gallery-067",
     "number": 67,
+    "display_order": 67,
     "title": "Blue nevus",
     "organ": "Deri",
     "diagnosis": "",
@@ -940,6 +1007,7 @@
   {
     "gallery_id": "gallery-068",
     "number": 68,
+    "display_order": 68,
     "title": "Mikosis Fungoides MF",
     "organ": "Deri",
     "diagnosis": "",
@@ -954,6 +1022,7 @@
   {
     "gallery_id": "gallery-069",
     "number": 69,
+    "display_order": 69,
     "title": "Skuamöz hücreli karsinoma in situ, Bowen",
     "organ": "Deri",
     "diagnosis": "",
@@ -968,6 +1037,7 @@
   {
     "gallery_id": "gallery-070",
     "number": 70,
+    "display_order": 70,
     "title": "Hidradenoma papilliferum",
     "organ": "Deri",
     "diagnosis": "",
@@ -982,6 +1052,7 @@
   {
     "gallery_id": "gallery-071",
     "number": 71,
+    "display_order": 71,
     "title": "ALL",
     "organ": "Kemik iliği",
     "diagnosis": "",
@@ -996,6 +1067,7 @@
   {
     "gallery_id": "gallery-072",
     "number": 72,
+    "display_order": 72,
     "title": "Ürotelyal karsinom, noninvaziv",
     "organ": "Mesane",
     "diagnosis": "",
