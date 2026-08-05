@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Patoloji Pratik Slaytları</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#eef2f7;color:#16243a;font-family:Inter,system-ui,Segoe UI,sans-serif}body.modal-open{overflow:hidden}
+*{box-sizing:border-box}html{background:#eef2f7}body{margin:0;background:#eef2f7;color:#16243a;font-family:Inter,system-ui,Segoe UI,sans-serif}body.modal-open{overflow:hidden}
 button,input{font:inherit}button{touch-action:manipulation}header{background:linear-gradient(135deg,#102847,#1c4a76);color:#fff;padding:30px 18px;box-shadow:0 8px 24px #0f254033}
 .header-inner{max-width:1240px;margin:auto;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 h1{margin:0 0 7px;font-size:clamp(27px,4vw,42px)}.subtitle{opacity:.86}.managed{color:#dbe7f5;background:#ffffff12;border:1px solid #ffffff38;border-radius:11px;padding:10px 14px;font-size:13px}
@@ -11,32 +11,41 @@ main{max-width:1240px;margin:auto;padding:24px 18px 40px}.tools{display:flex;gap
 #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:19px;align-items:start}
 .card{background:#fff;border-radius:15px;overflow:hidden;border:1px solid #dce4ef;box-shadow:0 5px 18px #18203314;transition:.16s}.card:hover{box-shadow:0 10px 28px #18203320;border-color:#c2d0e1}
 .thumb-link{display:block;background:#f8fafc;border-bottom:1px solid #edf1f6}.small-thumb{display:block;width:100%;height:176px;object-fit:contain;background:#fff;transition:.16s}.thumb-link:hover .small-thumb{transform:scale(1.015)}
-.text{padding:15px}.diagnosis{font-size:18px;font-weight:750;line-height:1.28}.organ{color:#626f80;margin-top:6px;line-height:1.4;min-height:1.4em}
-.actions{display:flex;gap:8px;align-items:center;margin-top:14px}.viewer-link{flex:1;border-radius:9px;padding:9px 12px;text-decoration:none;background:#1d5f9e;color:#fff;border:1px solid #1d5f9e;font-weight:700;text-align:center}.viewer-link:hover{background:#174e82}
-.detail-icon{width:42px;height:42px;flex:0 0 42px;border-radius:10px;border:1px solid #c8d5e5;background:#f5f8fc;color:#294a70;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}.detail-icon:hover{background:#eaf1f8;border-color:#aebed2}.detail-icon:focus-visible,.modal-close:focus-visible,.zoom-button:focus-visible{outline:3px solid #65a9e8;outline-offset:2px}.detail-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.text{padding:15px 15px 0}.diagnosis{font-size:18px;font-weight:750;line-height:1.28}.organ{color:#626f80;margin-top:6px;line-height:1.4;min-height:1.4em}
+.expand-button{width:100%;min-height:43px;margin-top:12px;border:0;border-top:1px solid #e3eaf3;background:#f7f9fc;color:#294a70;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:19px;line-height:1;transition:.15s}.expand-button:hover{background:#edf3f9}.expand-button:focus-visible,.modal-close:focus-visible,.modal-button:focus-visible{outline:3px solid #65a9e8;outline-offset:-3px}
 .empty{grid-column:1/-1;background:#fff;padding:28px;border-radius:14px;text-align:center;color:#667386}footer{max-width:1240px;margin:0 auto;padding:0 18px 32px;color:#748094;font-size:13px}
-.preview-modal[hidden]{display:none}.preview-modal{position:fixed;inset:0;z-index:1000;display:flex;flex-direction:column;background:#07101d;color:#fff}
-.modal-header{height:64px;flex:0 0 64px;display:flex;align-items:center;gap:13px;padding:9px 12px 9px 18px;background:#10213a;border-bottom:1px solid #29405f;box-shadow:0 4px 18px #0005}.modal-heading{min-width:0;flex:1}.modal-title{font-size:17px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.modal-organ{font-size:13px;color:#b8c8da;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.modal-tools{display:flex;gap:7px;align-items:center}.zoom-button,.modal-close{height:40px;min-width:40px;border:1px solid #496787;border-radius:9px;background:#1c385a;color:#fff;cursor:pointer}.zoom-button:hover,.modal-close:hover{background:#2a4d75}.zoom-reset{min-width:58px;padding:0 10px}.modal-close{font-size:25px;line-height:1}
-.modal-body{min-height:0;flex:1;display:grid;grid-template-columns:minmax(250px,330px) 1fr}.modal-info{overflow:auto;padding:20px 19px;background:#0e1b2d;border-right:1px solid #29405f}.modal-viewer-link{display:block;padding:11px 14px;border-radius:9px;background:#1d6cad;color:#fff;text-decoration:none;text-align:center;font-weight:750;margin-bottom:18px}.modal-viewer-link:hover{background:#2380c9}.detail-row{margin-top:14px;color:#d3dfec;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere}.detail-label{display:block;color:#8fb0d2;font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}.tag{font-size:12px;color:#d5e7f8;background:#1b3857;border:1px solid #31577c;border-radius:999px;padding:4px 9px}
-.preview-stage{position:relative;min-width:0;min-height:0;overflow:auto;display:flex;align-items:flex-start;justify-content:center;background:#050a11;padding:18px}.large-preview{display:block;max-width:none;max-height:none;flex:0 0 auto;box-shadow:0 7px 30px #0008;background:#fff}.loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#b7c7d9;text-align:center;padding:24px}.loading[hidden]{display:none}
-@media (max-width:760px){.small-thumb{height:158px}.modal-header{height:auto;min-height:64px;flex-wrap:wrap;padding:9px 10px}.modal-heading{flex-basis:calc(100% - 52px)}.modal-tools{order:3;width:100%;justify-content:center}.modal-close{position:absolute;right:10px;top:10px}.modal-body{display:flex;flex-direction:column}.modal-info{max-height:30vh;border-right:0;border-bottom:1px solid #29405f;padding:13px 14px}.modal-viewer-link{margin-bottom:10px}.detail-row{margin-top:8px}.preview-stage{flex:1;padding:8px}.viewer-link{padding:10px}.detail-icon{width:44px;height:44px;flex-basis:44px}}
+.preview-modal[hidden]{display:none}.preview-modal{position:fixed;inset:0;z-index:1000;display:flex;flex-direction:column;height:100vh;height:100dvh;background:#07101d;color:#fff;overscroll-behavior:none}
+.modal-header{min-height:64px;flex:0 0 auto;display:flex;align-items:center;gap:10px;padding:calc(9px + env(safe-area-inset-top)) calc(12px + env(safe-area-inset-right)) 9px calc(18px + env(safe-area-inset-left));background:#10213a;border-bottom:1px solid #29405f;box-shadow:0 4px 18px #0005;z-index:3}.modal-heading{min-width:0;flex:1}.modal-title{font-size:17px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.modal-organ{font-size:13px;color:#b8c8da;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.modal-tools{display:flex;gap:7px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.modal-button,.modal-close{height:40px;min-width:40px;border:1px solid #496787;border-radius:9px;background:#1c385a;color:#fff;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0 10px}.modal-button:hover,.modal-close:hover{background:#2a4d75}.zoom-reset{min-width:60px}.modal-close{font-size:25px;line-height:1;padding:0}.info-toggle[aria-pressed="true"]{background:#3779ad;border-color:#65a9e8}.fullscreen-button{font-size:21px}
+.modal-body{min-height:0;flex:1;display:grid;grid-template-columns:minmax(250px,330px) minmax(0,1fr)}.modal-info{overflow:auto;padding:20px 19px calc(20px + env(safe-area-inset-bottom)) calc(19px + env(safe-area-inset-left));background:#0e1b2d;border-right:1px solid #29405f}.preview-modal.info-hidden .modal-body{grid-template-columns:minmax(0,1fr)}.preview-modal.info-hidden .modal-info{display:none}
+.detail-row{margin-top:14px;color:#d3dfec;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere}.detail-row:first-child{margin-top:0}.detail-label{display:block;color:#8fb0d2;font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}.tag{font-size:12px;color:#d5e7f8;background:#1b3857;border:1px solid #31577c;border-radius:999px;padding:4px 9px}
+.preview-stage{position:relative;min-width:0;min-height:0;overflow:hidden;background:#050a11;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none;overscroll-behavior:none}.preview-stage.dragging{cursor:grabbing}.large-preview{position:absolute;left:0;top:0;display:block;max-width:none;max-height:none;transform-origin:0 0;will-change:transform;pointer-events:none;-webkit-user-drag:none;box-shadow:0 7px 30px #0008;background:#fff}.loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#b7c7d9;text-align:center;padding:24px;z-index:2}.loading[hidden]{display:none}.gesture-hint{position:absolute;left:50%;bottom:calc(12px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:2;background:#08121ecc;border:1px solid #47617d;color:#d6e2ef;border-radius:999px;padding:7px 12px;font-size:12px;pointer-events:none;opacity:0;transition:opacity .25s}.gesture-hint.show{opacity:1}
+.preview-modal:fullscreen{width:100%;height:100%;background:#07101d}.preview-modal:-webkit-full-screen{width:100%;height:100%;background:#07101d}
+@media (max-width:760px){header{padding:23px 14px}.managed{display:none}main{padding:18px 12px 32px}#grid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}.small-thumb{height:158px}.text{padding:13px 13px 0}.modal-header{min-height:60px;gap:6px;padding-top:calc(7px + env(safe-area-inset-top));padding-left:calc(9px + env(safe-area-inset-left));padding-right:calc(9px + env(safe-area-inset-right));flex-wrap:wrap}.modal-heading{flex:1 1 calc(100% - 49px)}.modal-tools{order:3;width:100%;justify-content:center;padding-bottom:2px}.modal-close{position:absolute;right:calc(9px + env(safe-area-inset-right));top:calc(7px + env(safe-area-inset-top))}.modal-body{display:flex;flex-direction:column}.modal-info{max-height:34vh;border-right:0;border-bottom:1px solid #29405f;padding:13px calc(14px + env(safe-area-inset-right)) 13px calc(14px + env(safe-area-inset-left))}.preview-stage{flex:1}.detail-row{margin-top:8px}.modal-button,.modal-close{height:38px;min-width:38px;padding:0 9px}.zoom-reset{min-width:58px}.gesture-hint{max-width:calc(100% - 24px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+@media (max-width:390px){.modal-tools{gap:5px}.modal-button{padding:0 7px}.zoom-reset{min-width:54px}.modal-title{font-size:15px}}
 </style></head><body>
 <header><div class="header-inner"><div><h1>Patoloji Pratik Slaytları</h1><div class="subtitle">Sanal mikroskop galerisi</div></div><div class="managed">Bilgiler masaüstü uygulamasından yönetilir</div></div></header>
 <main><div class="tools"><input id="q" type="search" placeholder="Organ, tanı, açıklama veya etiket ara"><p id="count"></p></div><div id="grid"></div></main>
-<footer>Küçük ön izlemeye tıklayarak sanal mikroskobu, büyüteç simgesine tıklayarak ekranı kaplayan büyük ön izlemeyi açabilirsiniz.</footer>
+<footer>Küçük ön izlemeye tıklayınca sanal mikroskop açılır. 🔽 simgesi ayrıntıları ve büyük ön izlemeyi açar.</footer>
 <div id="previewModal" class="preview-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
  <div class="modal-header">
   <div class="modal-heading"><div id="modalTitle" class="modal-title"></div><div id="modalOrgan" class="modal-organ"></div></div>
-  <div class="modal-tools" aria-label="Ön izleme kontrolleri"><button class="zoom-button" type="button" data-modal-zoom="out" aria-label="Uzaklaştır">−</button><button class="zoom-button zoom-reset" type="button" data-modal-zoom="reset">100%</button><button class="zoom-button" type="button" data-modal-zoom="in" aria-label="Yakınlaştır">+</button></div>
+  <div class="modal-tools" aria-label="Ön izleme kontrolleri">
+   <button id="infoToggle" class="modal-button info-toggle" type="button" aria-label="Açıklamayı göster veya gizle" title="Açıklamayı göster/gizle" aria-pressed="true">ℹ</button>
+   <button class="modal-button" type="button" data-modal-zoom="out" aria-label="Uzaklaştır" title="Uzaklaştır">−</button>
+   <button class="modal-button zoom-reset" type="button" data-modal-zoom="reset" aria-label="Görünümü sıfırla">100%</button>
+   <button class="modal-button" type="button" data-modal-zoom="in" aria-label="Yakınlaştır" title="Yakınlaştır">+</button>
+   <button id="fullscreenToggle" class="modal-button fullscreen-button" type="button" aria-label="Tam ekranı aç veya kapat" title="Tam ekran">⛶</button>
+  </div>
   <button id="modalClose" class="modal-close" type="button" aria-label="Kapat" title="Kapat">×</button>
  </div>
- <div class="modal-body"><aside id="modalInfo" class="modal-info"></aside><div id="previewStage" class="preview-stage"><div id="modalLoading" class="loading">Büyük ön izleme yükleniyor…</div><img id="modalImage" class="large-preview" alt="" hidden></div></div>
+ <div class="modal-body"><aside id="modalInfo" class="modal-info"></aside><div id="previewStage" class="preview-stage"><div id="modalLoading" class="loading">Büyük ön izleme yükleniyor…</div><img id="modalImage" class="large-preview" alt="" hidden><div id="gestureHint" class="gesture-hint">Fare tekerleğiyle yakınlaştırın; tutup sürükleyin. Mobilde iki parmakla yakınlaştırın.</div></div></div>
 </div>
 <script>
 let all=[];const grid=document.getElementById('grid'),q=document.getElementById('q'),count=document.getElementById('count');
-const modal=document.getElementById('previewModal'),modalTitle=document.getElementById('modalTitle'),modalOrgan=document.getElementById('modalOrgan'),modalInfo=document.getElementById('modalInfo'),modalImage=document.getElementById('modalImage'),modalLoading=document.getElementById('modalLoading'),previewStage=document.getElementById('previewStage'),modalClose=document.getElementById('modalClose');
-let activeItem=null,lastFocused=null,fitWidth=0,zoomLevel=1;
+const modal=document.getElementById('previewModal'),modalTitle=document.getElementById('modalTitle'),modalOrgan=document.getElementById('modalOrgan'),modalInfo=document.getElementById('modalInfo'),modalImage=document.getElementById('modalImage'),modalLoading=document.getElementById('modalLoading'),previewStage=document.getElementById('previewStage'),modalClose=document.getElementById('modalClose'),infoToggle=document.getElementById('infoToggle'),fullscreenToggle=document.getElementById('fullscreenToggle'),gestureHint=document.getElementById('gestureHint');
+let activeItem=null,lastFocused=null,baseScale=1,zoomRatio=1,viewX=0,viewY=0,hintTimer=null;
+const pointers=new Map();let gesture=null;
 function esc(x){return String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function parseCSV(text){
   const rows=[];let row=[],cell='',quoted=false;
@@ -52,48 +61,73 @@ function parseCSV(text){
 function infoContent(x){
  const tags=String(x.tags||'').split(',').map(t=>t.trim()).filter(Boolean);
  const diagnosis=(x.diagnosis||x.title||'Tanı bilgisi bekleniyor').trim();const title=(x.title||'').trim();
+ const diagnosisRow=`<div class="detail-row"><span class="detail-label">Tanı</span>${esc(diagnosis)}</div>`;
  const titleRow=title&&title!==diagnosis?`<div class="detail-row"><span class="detail-label">Başlık</span>${esc(title)}</div>`:'';
+ const organRow=x.organ?`<div class="detail-row"><span class="detail-label">Organ</span>${esc(x.organ)}</div>`:'';
  const description=x.description?`<div class="detail-row"><span class="detail-label">Açıklama</span>${esc(x.description)}</div>`:'<div class="detail-row"><span class="detail-label">Açıklama</span>Henüz açıklama eklenmemiş.</div>';
  const tagBlock=tags.length?`<div class="tags">${tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>`:'';
- return `<a class="modal-viewer-link" href="${esc(x.page_url)}">Sanal mikroskobu aç</a>${titleRow}${description}${tagBlock}`;
+ return `${diagnosisRow}${organRow}${titleRow}${description}${tagBlock}`;
 }
-function icon(){return `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path><path d="M8.5 11h5M11 8.5v5"></path></svg>`}
 function draw(){
  const term=q.value.toLocaleLowerCase('tr');
  const rows=all.filter(x=>JSON.stringify(x).toLocaleLowerCase('tr').includes(term));
  count.textContent=rows.length+' slayt';
- grid.innerHTML=rows.length?rows.map((x,i)=>{const diagnosis=x.diagnosis||x.title||'Tanı bilgisi bekleniyor';const small=x.small_thumbnail_url||x.thumbnail_url;return `<article class="card"><a class="thumb-link" href="${esc(x.page_url)}" title="Sanal mikroskobu aç"><img class="small-thumb" loading="lazy" decoding="async" src="${esc(small)}" alt="${esc(diagnosis)}"></a><div class="text"><div class="diagnosis">${esc(diagnosis)}</div><div class="organ">${esc(x.organ||'')}</div><div class="actions"><a class="viewer-link" href="${esc(x.page_url)}">Sanal mikroskop</a><button class="detail-icon" type="button" data-preview-index="${i}" aria-label="Ayrıntıları ve büyük ön izlemeyi aç" title="Ayrıntılar ve büyük ön izleme">${icon()}</button></div></div></article>`;}).join(''):'<div class="empty">Aramayla eşleşen slayt bulunamadı.</div>';
+ grid.innerHTML=rows.length?rows.map((x,i)=>{const diagnosis=x.diagnosis||x.title||'Tanı bilgisi bekleniyor';const small=x.small_thumbnail_url||x.thumbnail_url;return `<article class="card"><a class="thumb-link" href="${esc(x.page_url)}" title="Sanal mikroskobu aç"><img class="small-thumb" loading="lazy" decoding="async" src="${esc(small)}" alt="${esc(diagnosis)}"></a><div class="text"><div class="diagnosis">${esc(diagnosis)}</div><div class="organ">${esc(x.organ||'')}</div></div><button class="expand-button" type="button" data-preview-index="${i}" aria-label="Ayrıntıları ve büyük ön izlemeyi aç" title="Ayrıntıları aç"><span aria-hidden="true">🔽</span></button></article>`;}).join(''):'<div class="empty">Aramayla eşleşen slayt bulunamadı.</div>';
  grid.querySelectorAll('[data-preview-index]').forEach((button,i)=>{button.dataset.itemId=rows[i].gallery_id||String(i)});
 }
-function applyZoom(value){
- zoomLevel=Math.max(.5,Math.min(4,value));
- if(!fitWidth||modalImage.hidden)return;
- modalImage.style.width=Math.round(fitWidth*zoomLevel)+'px';modalImage.style.height='auto';modalImage.dataset.zoom=String(zoomLevel);
- const reset=modal.querySelector('[data-modal-zoom="reset"]');if(reset)reset.textContent=Math.round(zoomLevel*100)+'%';
+function stagePoint(event){const rect=previewStage.getBoundingClientRect();return{x:event.clientX-rect.left,y:event.clientY-rect.top}}
+function currentScale(){return baseScale*zoomRatio}
+function updateResetLabel(){const reset=modal.querySelector('[data-modal-zoom="reset"]');if(reset)reset.textContent=Math.round(zoomRatio*100)+'%'}
+function clampView(){
+ if(modalImage.hidden||!modalImage.naturalWidth)return;
+ const scale=currentScale(),w=modalImage.naturalWidth*scale,h=modalImage.naturalHeight*scale,sw=previewStage.clientWidth,sh=previewStage.clientHeight;
+ const margin=40;
+ if(w<=sw){viewX=(sw-w)/2}else{viewX=Math.min(margin,Math.max(sw-w-margin,viewX))}
+ if(h<=sh){viewY=(sh-h)/2}else{viewY=Math.min(margin,Math.max(sh-h-margin,viewY))}
 }
-function fitPreview(){
+function renderView(){clampView();modalImage.style.transform=`translate3d(${viewX}px,${viewY}px,0) scale(${currentScale()})`;updateResetLabel()}
+function fitPreview(keepRatio=1){
  if(!modalImage.naturalWidth||!modalImage.naturalHeight)return;
- const availableWidth=Math.max(100,previewStage.clientWidth-36),availableHeight=Math.max(100,previewStage.clientHeight-36);
- fitWidth=Math.min(modalImage.naturalWidth,availableWidth,availableHeight*(modalImage.naturalWidth/modalImage.naturalHeight));
- applyZoom(1);previewStage.scrollTop=0;previewStage.scrollLeft=0;
+ const sw=Math.max(100,previewStage.clientWidth),sh=Math.max(100,previewStage.clientHeight);
+ baseScale=Math.min(sw/modalImage.naturalWidth,sh/modalImage.naturalHeight);
+ zoomRatio=Math.max(.5,Math.min(6,keepRatio));
+ viewX=(sw-modalImage.naturalWidth*currentScale())/2;viewY=(sh-modalImage.naturalHeight*currentScale())/2;renderView();
 }
+function zoomAt(nextRatio,cx,cy){
+ if(modalImage.hidden||!modalImage.naturalWidth)return;
+ const oldScale=currentScale(),localX=(cx-viewX)/oldScale,localY=(cy-viewY)/oldScale;
+ zoomRatio=Math.max(.5,Math.min(6,nextRatio));const newScale=currentScale();viewX=cx-localX*newScale;viewY=cy-localY*newScale;renderView();
+}
+function centerZoom(nextRatio){zoomAt(nextRatio,previewStage.clientWidth/2,previewStage.clientHeight/2)}
+function showGestureHint(){clearTimeout(hintTimer);gestureHint.classList.add('show');hintTimer=setTimeout(()=>gestureHint.classList.remove('show'),3200)}
 function openPreview(x,trigger){
- activeItem=x;lastFocused=trigger;modalTitle.textContent=x.diagnosis||x.title||'Tanı bilgisi bekleniyor';modalOrgan.textContent=x.organ||'';modalInfo.innerHTML=infoContent(x);modalImage.alt=(x.diagnosis||x.title||'')+' büyük ön izleme';modalImage.hidden=true;modalLoading.hidden=false;modalLoading.textContent='Büyük ön izleme yükleniyor…';modal.hidden=false;document.body.classList.add('modal-open');modalImage.onload=()=>{modalLoading.hidden=true;modalImage.hidden=false;requestAnimationFrame(fitPreview)};modalImage.onerror=()=>{modalLoading.hidden=false;modalLoading.textContent='Büyük ön izleme yüklenemedi.'};modalImage.src=x.thumbnail_url;modalClose.focus();
+ activeItem=x;lastFocused=trigger;modalTitle.textContent=x.diagnosis||x.title||'Tanı bilgisi bekleniyor';modalOrgan.textContent=x.organ||'';modalInfo.innerHTML=infoContent(x);modalImage.alt=(x.diagnosis||x.title||'')+' büyük ön izleme';modalImage.hidden=true;modalLoading.hidden=false;modalLoading.textContent='Büyük ön izleme yükleniyor…';modal.hidden=false;modal.classList.remove('info-hidden');infoToggle.setAttribute('aria-pressed','true');document.body.classList.add('modal-open');pointers.clear();gesture=null;
+ modalImage.onload=()=>{modalLoading.hidden=true;modalImage.hidden=false;requestAnimationFrame(()=>{fitPreview(1);showGestureHint()})};
+ modalImage.onerror=()=>{modalLoading.hidden=false;modalLoading.textContent='Büyük ön izleme yüklenemedi.'};modalImage.src=x.thumbnail_url;modalClose.focus();
 }
-function closePreview(){
- if(modal.hidden)return;modal.hidden=true;document.body.classList.remove('modal-open');modalImage.onload=null;modalImage.onerror=null;modalImage.removeAttribute('src');modalImage.hidden=true;modalImage.style.width='';fitWidth=0;zoomLevel=1;activeItem=null;if(lastFocused)lastFocused.focus();
+async function closePreview(){
+ if(modal.hidden)return;if(document.fullscreenElement===modal&&document.exitFullscreen){try{await document.exitFullscreen()}catch(_){}}
+ modal.hidden=true;document.body.classList.remove('modal-open');modalImage.onload=null;modalImage.onerror=null;modalImage.removeAttribute('src');modalImage.hidden=true;modalImage.style.transform='';baseScale=1;zoomRatio=1;viewX=0;viewY=0;activeItem=null;pointers.clear();gesture=null;clearTimeout(hintTimer);gestureHint.classList.remove('show');if(lastFocused)lastFocused.focus();
 }
-grid.addEventListener('click',event=>{
- const button=event.target.closest('[data-preview-index]');if(!button)return;
- const item=all.find(x=>(x.gallery_id||'')===button.dataset.itemId);if(item)openPreview(item,button);
-});
-modal.addEventListener('click',event=>{const zoom=event.target.closest('[data-modal-zoom]');if(zoom){const action=zoom.dataset.modalZoom;applyZoom(action==='in'?zoomLevel+.25:action==='out'?zoomLevel-.25:1);}});
+function pointerSummary(){const pts=[...pointers.values()];if(pts.length<2)return null;const a=pts[0],b=pts[1];return{distance:Math.hypot(b.x-a.x,b.y-a.y),mid:{x:(a.x+b.x)/2,y:(a.y+b.y)/2}}}
+previewStage.addEventListener('wheel',event=>{if(modalImage.hidden)return;event.preventDefault();const p=stagePoint(event);const factor=Math.exp(-event.deltaY*.0015);zoomAt(zoomRatio*factor,p.x,p.y)},{passive:false});
+previewStage.addEventListener('dblclick',event=>{event.preventDefault();fitPreview(1)});
+previewStage.addEventListener('pointerdown',event=>{if(modalImage.hidden)return;const p=stagePoint(event);pointers.set(event.pointerId,p);previewStage.setPointerCapture(event.pointerId);previewStage.classList.add('dragging');if(pointers.size===1){gesture={type:'pan',last:p}}else if(pointers.size>=2){const s=pointerSummary();gesture=s?{type:'pinch',distance:s.distance,mid:s.mid}:null}});
+previewStage.addEventListener('pointermove',event=>{if(!pointers.has(event.pointerId)||modalImage.hidden)return;const p=stagePoint(event);pointers.set(event.pointerId,p);if(pointers.size===1&&gesture&&gesture.type==='pan'){viewX+=p.x-gesture.last.x;viewY+=p.y-gesture.last.y;gesture.last=p;renderView()}else if(pointers.size>=2){const s=pointerSummary();if(!s)return;if(!gesture||gesture.type!=='pinch'){gesture={type:'pinch',distance:s.distance,mid:s.mid};return}const factor=s.distance/Math.max(1,gesture.distance);zoomAt(zoomRatio*factor,gesture.mid.x,gesture.mid.y);viewX+=s.mid.x-gesture.mid.x;viewY+=s.mid.y-gesture.mid.y;renderView();gesture={type:'pinch',distance:s.distance,mid:s.mid}}});
+function endPointer(event){pointers.delete(event.pointerId);if(pointers.size===0){gesture=null;previewStage.classList.remove('dragging')}else if(pointers.size===1){const p=[...pointers.values()][0];gesture={type:'pan',last:p}}else{const s=pointerSummary();gesture=s?{type:'pinch',distance:s.distance,mid:s.mid}:null}}
+previewStage.addEventListener('pointerup',endPointer);previewStage.addEventListener('pointercancel',endPointer);previewStage.addEventListener('lostpointercapture',endPointer);
+grid.addEventListener('click',event=>{const button=event.target.closest('[data-preview-index]');if(!button)return;const item=all.find(x=>(x.gallery_id||'')===button.dataset.itemId);if(item)openPreview(item,button)});
+modal.addEventListener('click',event=>{const zoom=event.target.closest('[data-modal-zoom]');if(!zoom)return;const action=zoom.dataset.modalZoom;if(action==='reset')fitPreview(1);else centerZoom(action==='in'?zoomRatio*1.25:zoomRatio/1.25)});
+infoToggle.addEventListener('click',()=>{const hiding=!modal.classList.contains('info-hidden');modal.classList.toggle('info-hidden',hiding);infoToggle.setAttribute('aria-pressed',String(!hiding));requestAnimationFrame(()=>fitPreview(zoomRatio))});
+fullscreenToggle.addEventListener('click',async()=>{try{if(document.fullscreenElement){await document.exitFullscreen()}else if(modal.requestFullscreen){await modal.requestFullscreen()}}catch(error){console.warn('Tam ekran kullanılamadı',error)}});
+document.addEventListener('fullscreenchange',()=>{fullscreenToggle.textContent=document.fullscreenElement?'⛶':'⛶';fullscreenToggle.title=document.fullscreenElement?'Tam ekrandan çık':'Tam ekran';requestAnimationFrame(()=>{if(!modal.hidden&&!modalImage.hidden)fitPreview(zoomRatio)})});
 modalClose.addEventListener('click',closePreview);
-document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!modal.hidden)closePreview();});
-window.addEventListener('resize',()=>{if(!modal.hidden&&!modalImage.hidden)fitPreview();});
+document.addEventListener('keydown',event=>{if(modal.hidden)return;if(event.key==='Escape'&&!document.fullscreenElement)closePreview();else if(event.key==='+'||event.key==='=')centerZoom(zoomRatio*1.25);else if(event.key==='-')centerZoom(zoomRatio/1.25);else if(event.key==='0')fitPreview(1)});
+window.addEventListener('resize',()=>{if(!modal.hidden&&!modalImage.hidden)fitPreview(zoomRatio)});
+if(!modal.requestFullscreen){fullscreenToggle.hidden=true}
 Promise.all([
  fetch('slides.json?'+Date.now()).then(r=>r.json()),
  fetch("slayt_bilgileri.csv"+'?'+Date.now()).then(r=>r.text()).then(parseCSV).catch(()=>[])
-]).then(([base,edits])=>{const by=Object.fromEntries(edits.map(x=>[x.gallery_id,x]));all=base.map(x=>Object.assign({},x,by[x.gallery_id]||{}));draw();}).catch(e=>{grid.innerHTML='<div class="empty">Galeri bilgileri yüklenemedi.</div>';console.error(e)});
+]).then(([base,edits])=>{const by=Object.fromEntries(edits.map(x=>[x.gallery_id,x]));all=base.map(x=>Object.assign({},x,by[x.gallery_id]||{}));draw()}).catch(e=>{grid.innerHTML='<div class="empty">Galeri bilgileri yüklenemedi.</div>';console.error(e)});
 q.addEventListener('input',draw);
 </script></body></html>
