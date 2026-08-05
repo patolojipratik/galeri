@@ -3,27 +3,26 @@
 <title>Patoloji Pratik Slaytları</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#eef2f7;color:#16243a;font-family:Inter,system-ui,Segoe UI,sans-serif}
-header{background:linear-gradient(135deg,#102847,#1c4a76);color:#fff;padding:30px 18px;box-shadow:0 8px 24px #0f254033}
+button,input{font:inherit}header{background:linear-gradient(135deg,#102847,#1c4a76);color:#fff;padding:30px 18px;box-shadow:0 8px 24px #0f254033}
 .header-inner{max-width:1240px;margin:auto;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-h1{margin:0 0 7px;font-size:clamp(27px,4vw,42px)}.subtitle{opacity:.86}
-.managed{color:#dbe7f5;background:#ffffff12;border:1px solid #ffffff38;border-radius:11px;padding:10px 14px;font-size:13px}
-main{max-width:1240px;margin:auto;padding:24px 18px 40px}
-.tools{display:flex;gap:12px;align-items:center;margin-bottom:18px;flex-wrap:wrap}
-#q{flex:1;min-width:260px;padding:14px 16px;border:1px solid #c9d3e2;border-radius:11px;font-size:16px;box-shadow:0 2px 8px #18324f0b}
-#count{margin:0;color:#596779;font-weight:650}
-#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:19px}
-.card{display:block;background:#fff;color:inherit;text-decoration:none;border-radius:15px;overflow:hidden;border:1px solid #dce4ef;box-shadow:0 5px 18px #18203314;transition:.16s}
-.card:hover{transform:translateY(-3px);box-shadow:0 10px 28px #18203325;border-color:#b9c9dd}
-.card img{width:100%;height:194px;object-fit:contain;background:#fff}
-.text{padding:15px}.topline{display:flex;justify-content:space-between;gap:8px;align-items:center}.id{font-weight:800;color:#245a9f}.fmt{font-size:12px;color:#708095;background:#edf2f8;border-radius:999px;padding:3px 8px}
-.diagnosis{font-size:18px;font-weight:750;margin-top:7px;line-height:1.28}.organ,.description{color:#626f80;margin-top:6px;line-height:1.4}.description{font-size:14px}
+h1{margin:0 0 7px;font-size:clamp(27px,4vw,42px)}.subtitle{opacity:.86}.managed{color:#dbe7f5;background:#ffffff12;border:1px solid #ffffff38;border-radius:11px;padding:10px 14px;font-size:13px}
+main{max-width:1240px;margin:auto;padding:24px 18px 40px}.tools{display:flex;gap:12px;align-items:center;margin-bottom:18px;flex-wrap:wrap}
+#q{flex:1;min-width:260px;padding:14px 16px;border:1px solid #c9d3e2;border-radius:11px;font-size:16px;box-shadow:0 2px 8px #18324f0b}#count{margin:0;color:#596779;font-weight:650}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:19px;align-items:start}
+.card{background:#fff;border-radius:15px;overflow:hidden;border:1px solid #dce4ef;box-shadow:0 5px 18px #18203314;transition:.16s}.card:hover{box-shadow:0 10px 28px #18203320;border-color:#c2d0e1}
+.thumb-link{display:block;background:#f8fafc;border-bottom:1px solid #edf1f6}.small-thumb{display:block;width:100%;height:176px;object-fit:contain;background:#fff;transition:.16s}.thumb-link:hover .small-thumb{transform:scale(1.015)}
+.text{padding:15px}.diagnosis{font-size:18px;font-weight:750;line-height:1.28}.organ{color:#626f80;margin-top:6px;line-height:1.4;min-height:1.4em}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.viewer-link,.detail-toggle,.detail-close,.zoom-button{border-radius:9px;padding:8px 11px;text-decoration:none;cursor:pointer;border:1px solid #c8d5e5}
+.viewer-link{background:#1d5f9e;color:#fff;border-color:#1d5f9e;font-weight:700}.viewer-link:hover{background:#174e82}.detail-toggle,.detail-close,.zoom-button{background:#f5f8fc;color:#294a70}.detail-toggle:hover,.detail-close:hover,.zoom-button:hover{background:#eaf1f8}
+.details{border-top:1px solid #e4eaf1;margin-top:14px;padding-top:13px}.details[hidden]{display:none}.detail-row{margin-top:8px;color:#4f5f73;line-height:1.5;white-space:pre-wrap}.detail-label{display:block;color:#263b55;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px}
 .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.tag{font-size:12px;color:#31577f;background:#edf4fb;border:1px solid #d3e2f2;border-radius:999px;padding:3px 8px}
-.empty{grid-column:1/-1;background:#fff;padding:28px;border-radius:14px;text-align:center;color:#667386}
-footer{max-width:1240px;margin:0 auto;padding:0 18px 32px;color:#748094;font-size:13px}
+.preview{margin-top:13px;border:1px solid #d9e2ed;border-radius:12px;overflow:hidden;background:#f7f9fc}.preview-toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;background:#edf3f9;border-bottom:1px solid #d9e2ed}.preview-title{font-size:13px;font-weight:750;color:#314d6c}.zoom-controls{display:flex;gap:5px}.zoom-button{padding:5px 9px;min-width:34px}.preview-viewport{height:330px;overflow:auto;background:#fff;display:flex;align-items:flex-start;justify-content:flex-start}.large-preview{display:block;width:100%;height:auto;max-width:none;transform-origin:0 0}.loading{padding:28px;text-align:center;color:#6c7889;width:100%}.detail-close{margin-top:12px;width:100%}
+.empty{grid-column:1/-1;background:#fff;padding:28px;border-radius:14px;text-align:center;color:#667386}footer{max-width:1240px;margin:0 auto;padding:0 18px 32px;color:#748094;font-size:13px}
+@media (max-width:620px){.small-thumb{height:158px}.preview-viewport{height:260px}.viewer-link,.detail-toggle{flex:1;text-align:center}}
 </style></head><body>
 <header><div class="header-inner"><div><h1>Patoloji Pratik Slaytları</h1><div class="subtitle">Sanal mikroskop galerisi</div></div><div class="managed">Bilgiler masaüstü uygulamasından yönetilir</div></div></header>
-<main><div class="tools"><input id="q" type="search" placeholder="Numara, organ, tanı, açıklama veya etiket ara"><p id="count"></p></div><div id="grid"></div></main>
-<footer>Başlık, organ, tanı, açıklama ve etiketler Patoloji Pratik Slayt Yayıncısı ile güncellenir.</footer>
+<main><div class="tools"><input id="q" type="search" placeholder="Organ, tanı, açıklama veya etiket ara"><p id="count"></p></div><div id="grid"></div></main>
+<footer>Küçük ön izlemeye veya “Sanal mikroskop” düğmesine basarak slaytı açabilirsiniz. Büyük ön izleme yalnızca istendiğinde yüklenir.</footer>
 <script>
 let all=[];const grid=document.getElementById('grid'),q=document.getElementById('q'),count=document.getElementById('count');
 function esc(x){return String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
@@ -38,12 +37,29 @@ function parseCSV(text){
   const head=(rows.shift()||[]).map(x=>x.replace(/^\uFEFF/,''));
   return rows.filter(r=>r.some(Boolean)).map(r=>Object.fromEntries(head.map((h,i)=>[h,r[i]||''])));
 }
+function detailContent(x){
+ const tags=String(x.tags||'').split(',').map(t=>t.trim()).filter(Boolean);
+ const title=(x.title||'').trim();const diagnosis=(x.diagnosis||x.title||'').trim();
+ const titleRow=title&&title!==diagnosis?`<div class="detail-row"><span class="detail-label">Başlık</span>${esc(title)}</div>`:'';
+ const description=x.description?`<div class="detail-row"><span class="detail-label">Açıklama</span>${esc(x.description)}</div>`:'';
+ const tagBlock=tags.length?`<div class="tags">${tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>`:'';
+ return `${titleRow}${description}${tagBlock}<div class="preview"><div class="preview-toolbar"><span class="preview-title">Büyük ön izleme</span><div class="zoom-controls"><button class="zoom-button" type="button" data-zoom="out" aria-label="Uzaklaştır">−</button><button class="zoom-button" type="button" data-zoom="reset">100%</button><button class="zoom-button" type="button" data-zoom="in" aria-label="Yakınlaştır">+</button></div></div><div class="preview-viewport"><div class="loading">Ön izleme açılınca yüklenecek.</div><img class="large-preview" data-src="${esc(x.thumbnail_url)}" alt="${esc(diagnosis)} büyük ön izleme" hidden></div></div><button class="detail-close" type="button">Detayları kapat</button>`;
+}
 function draw(){
  const term=q.value.toLocaleLowerCase('tr');
  const rows=all.filter(x=>JSON.stringify(x).toLocaleLowerCase('tr').includes(term));
  count.textContent=rows.length+' slayt';
- grid.innerHTML=rows.length?rows.map(x=>{const tags=String(x.tags||'').split(',').map(t=>t.trim()).filter(Boolean);return `<a class="card" href="${esc(x.page_url)}"><img loading="lazy" src="${esc(x.thumbnail_url)}" alt="${esc(x.gallery_id)}"><div class="text"><div class="topline"><div class="id">${esc(x.gallery_id)}</div><div class="fmt">${esc(x.source_format||'')}</div></div><div class="diagnosis">${esc(x.diagnosis||x.title)}</div><div class="organ">${esc(x.organ||'')}</div><div class="description">${esc(x.description||'')}</div>${tags.length?`<div class="tags">${tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>`:''}</div></a>`;}).join(''):'<div class="empty">Aramayla eşleşen slayt bulunamadı.</div>';
+ grid.innerHTML=rows.length?rows.map(x=>{const diagnosis=x.diagnosis||x.title||'Tanı bilgisi bekleniyor';const small=x.small_thumbnail_url||x.thumbnail_url;return `<article class="card"><a class="thumb-link" href="${esc(x.page_url)}" title="Sanal mikroskobu aç"><img class="small-thumb" loading="lazy" decoding="async" src="${esc(small)}" alt="${esc(diagnosis)}"></a><div class="text"><div class="diagnosis">${esc(diagnosis)}</div><div class="organ">${esc(x.organ||'')}</div><div class="actions"><a class="viewer-link" href="${esc(x.page_url)}">Sanal mikroskop</a><button class="detail-toggle" type="button" aria-expanded="false">Detay ve büyük ön izleme</button></div><section class="details" hidden>${detailContent(x)}</section></div></article>`;}).join(''):'<div class="empty">Aramayla eşleşen slayt bulunamadı.</div>';
 }
+function setZoom(img,value){const z=Math.max(.5,Math.min(4,value));img.dataset.zoom=String(z);img.style.width=(z*100)+'%';}
+grid.addEventListener('click',event=>{
+ const toggle=event.target.closest('.detail-toggle');
+ if(toggle){const card=toggle.closest('.card'),details=card.querySelector('.details'),opening=details.hidden;details.hidden=!opening;toggle.setAttribute('aria-expanded',String(opening));toggle.textContent=opening?'Detayları gizle':'Detay ve büyük ön izleme';if(opening){const img=details.querySelector('.large-preview'),loading=details.querySelector('.loading');if(!img.getAttribute('src')){loading.textContent='Büyük ön izleme yükleniyor…';img.onload=()=>{loading.hidden=true;img.hidden=false;setZoom(img,1)};img.onerror=()=>{loading.textContent='Büyük ön izleme yüklenemedi.'};img.src=img.dataset.src;}}return;}
+ const close=event.target.closest('.detail-close');
+ if(close){const card=close.closest('.card'),details=card.querySelector('.details'),button=card.querySelector('.detail-toggle'),img=details.querySelector('.large-preview'),loading=details.querySelector('.loading');details.hidden=true;button.setAttribute('aria-expanded','false');button.textContent='Detay ve büyük ön izleme';img.removeAttribute('src');img.hidden=true;img.style.width='100%';loading.hidden=false;loading.textContent='Ön izleme açılınca yüklenecek.';card.scrollIntoView({block:'nearest'});return;}
+ const zoom=event.target.closest('[data-zoom]');
+ if(zoom){const img=zoom.closest('.preview').querySelector('.large-preview');if(img.hidden)return;const current=Number(img.dataset.zoom||1);setZoom(img,zoom.dataset.zoom==='in'?current+.25:zoom.dataset.zoom==='out'?current-.25:1);}
+});
 Promise.all([
  fetch('slides.json?'+Date.now()).then(r=>r.json()),
  fetch("slayt_bilgileri.csv"+'?'+Date.now()).then(r=>r.text()).then(parseCSV).catch(()=>[])
