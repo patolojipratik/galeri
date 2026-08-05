@@ -960,24 +960,9 @@
     "small_thumbnail_url": "thumbs/gallery-064.jpg"
   },
   {
-    "gallery_id": "gallery-065",
-    "number": 65,
-    "display_order": 65,
-    "title": "Böbrek RCC silinecek",
-    "organ": "",
-    "diagnosis": "",
-    "description": "",
-    "tags": "",
-    "source_format": "SVS",
-    "page_url": "https://patolojipratik.github.io/gallery-065/",
-    "thumbnail_url": "https://patolojipratik.github.io/gallery-065/thumbnail.jpg",
-    "label_url": "https://patolojipratik.github.io/gallery-065/label.jpg",
-    "small_thumbnail_url": "thumbs/gallery-065.jpg"
-  },
-  {
     "gallery_id": "gallery-066",
     "number": 66,
-    "display_order": 66,
+    "display_order": 65,
     "title": "Şeffaf hücreli renal hücreli karsinom",
     "organ": "Böbrek",
     "diagnosis": "",
@@ -992,7 +977,7 @@
   {
     "gallery_id": "gallery-067",
     "number": 67,
-    "display_order": 67,
+    "display_order": 66,
     "title": "Blue nevus",
     "organ": "Deri",
     "diagnosis": "",
@@ -1007,7 +992,7 @@
   {
     "gallery_id": "gallery-068",
     "number": 68,
-    "display_order": 68,
+    "display_order": 67,
     "title": "Mikosis Fungoides MF",
     "organ": "Deri",
     "diagnosis": "",
@@ -1022,7 +1007,7 @@
   {
     "gallery_id": "gallery-069",
     "number": 69,
-    "display_order": 69,
+    "display_order": 68,
     "title": "Skuamöz hücreli karsinoma in situ, Bowen",
     "organ": "Deri",
     "diagnosis": "",
@@ -1037,7 +1022,7 @@
   {
     "gallery_id": "gallery-070",
     "number": 70,
-    "display_order": 70,
+    "display_order": 69,
     "title": "Hidradenoma papilliferum",
     "organ": "Deri",
     "diagnosis": "",
@@ -1052,7 +1037,7 @@
   {
     "gallery_id": "gallery-071",
     "number": 71,
-    "display_order": 71,
+    "display_order": 70,
     "title": "ALL",
     "organ": "Kemik iliği",
     "diagnosis": "",
@@ -1067,7 +1052,7 @@
   {
     "gallery_id": "gallery-072",
     "number": 72,
-    "display_order": 72,
+    "display_order": 71,
     "title": "Ürotelyal karsinom, noninvaziv",
     "organ": "Mesane",
     "diagnosis": "",
