@@ -2,8 +2,8 @@
 <html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Patoloji Pratik Slaytları</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#eef2f7;color:#16243a;font-family:Inter,system-ui,Segoe UI,sans-serif}
-button,input{font:inherit}header{background:linear-gradient(135deg,#102847,#1c4a76);color:#fff;padding:30px 18px;box-shadow:0 8px 24px #0f254033}
+*{box-sizing:border-box}body{margin:0;background:#eef2f7;color:#16243a;font-family:Inter,system-ui,Segoe UI,sans-serif}body.modal-open{overflow:hidden}
+button,input{font:inherit}button{touch-action:manipulation}header{background:linear-gradient(135deg,#102847,#1c4a76);color:#fff;padding:30px 18px;box-shadow:0 8px 24px #0f254033}
 .header-inner{max-width:1240px;margin:auto;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 h1{margin:0 0 7px;font-size:clamp(27px,4vw,42px)}.subtitle{opacity:.86}.managed{color:#dbe7f5;background:#ffffff12;border:1px solid #ffffff38;border-radius:11px;padding:10px 14px;font-size:13px}
 main{max-width:1240px;margin:auto;padding:24px 18px 40px}.tools{display:flex;gap:12px;align-items:center;margin-bottom:18px;flex-wrap:wrap}
@@ -12,19 +12,31 @@ main{max-width:1240px;margin:auto;padding:24px 18px 40px}.tools{display:flex;gap
 .card{background:#fff;border-radius:15px;overflow:hidden;border:1px solid #dce4ef;box-shadow:0 5px 18px #18203314;transition:.16s}.card:hover{box-shadow:0 10px 28px #18203320;border-color:#c2d0e1}
 .thumb-link{display:block;background:#f8fafc;border-bottom:1px solid #edf1f6}.small-thumb{display:block;width:100%;height:176px;object-fit:contain;background:#fff;transition:.16s}.thumb-link:hover .small-thumb{transform:scale(1.015)}
 .text{padding:15px}.diagnosis{font-size:18px;font-weight:750;line-height:1.28}.organ{color:#626f80;margin-top:6px;line-height:1.4;min-height:1.4em}
-.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.viewer-link,.detail-toggle,.detail-close,.zoom-button{border-radius:9px;padding:8px 11px;text-decoration:none;cursor:pointer;border:1px solid #c8d5e5}
-.viewer-link{background:#1d5f9e;color:#fff;border-color:#1d5f9e;font-weight:700}.viewer-link:hover{background:#174e82}.detail-toggle,.detail-close,.zoom-button{background:#f5f8fc;color:#294a70}.detail-toggle:hover,.detail-close:hover,.zoom-button:hover{background:#eaf1f8}
-.details{border-top:1px solid #e4eaf1;margin-top:14px;padding-top:13px}.details[hidden]{display:none}.detail-row{margin-top:8px;color:#4f5f73;line-height:1.5;white-space:pre-wrap}.detail-label{display:block;color:#263b55;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px}
-.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.tag{font-size:12px;color:#31577f;background:#edf4fb;border:1px solid #d3e2f2;border-radius:999px;padding:3px 8px}
-.preview{margin-top:13px;border:1px solid #d9e2ed;border-radius:12px;overflow:hidden;background:#f7f9fc}.preview-toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;background:#edf3f9;border-bottom:1px solid #d9e2ed}.preview-title{font-size:13px;font-weight:750;color:#314d6c}.zoom-controls{display:flex;gap:5px}.zoom-button{padding:5px 9px;min-width:34px}.preview-viewport{height:330px;overflow:auto;background:#fff;display:flex;align-items:flex-start;justify-content:flex-start}.large-preview{display:block;width:100%;height:auto;max-width:none;transform-origin:0 0}.loading{padding:28px;text-align:center;color:#6c7889;width:100%}.detail-close{margin-top:12px;width:100%}
+.actions{display:flex;gap:8px;align-items:center;margin-top:14px}.viewer-link{flex:1;border-radius:9px;padding:9px 12px;text-decoration:none;background:#1d5f9e;color:#fff;border:1px solid #1d5f9e;font-weight:700;text-align:center}.viewer-link:hover{background:#174e82}
+.detail-icon{width:42px;height:42px;flex:0 0 42px;border-radius:10px;border:1px solid #c8d5e5;background:#f5f8fc;color:#294a70;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}.detail-icon:hover{background:#eaf1f8;border-color:#aebed2}.detail-icon:focus-visible,.modal-close:focus-visible,.zoom-button:focus-visible{outline:3px solid #65a9e8;outline-offset:2px}.detail-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .empty{grid-column:1/-1;background:#fff;padding:28px;border-radius:14px;text-align:center;color:#667386}footer{max-width:1240px;margin:0 auto;padding:0 18px 32px;color:#748094;font-size:13px}
-@media (max-width:620px){.small-thumb{height:158px}.preview-viewport{height:260px}.viewer-link,.detail-toggle{flex:1;text-align:center}}
+.preview-modal[hidden]{display:none}.preview-modal{position:fixed;inset:0;z-index:1000;display:flex;flex-direction:column;background:#07101d;color:#fff}
+.modal-header{height:64px;flex:0 0 64px;display:flex;align-items:center;gap:13px;padding:9px 12px 9px 18px;background:#10213a;border-bottom:1px solid #29405f;box-shadow:0 4px 18px #0005}.modal-heading{min-width:0;flex:1}.modal-title{font-size:17px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.modal-organ{font-size:13px;color:#b8c8da;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.modal-tools{display:flex;gap:7px;align-items:center}.zoom-button,.modal-close{height:40px;min-width:40px;border:1px solid #496787;border-radius:9px;background:#1c385a;color:#fff;cursor:pointer}.zoom-button:hover,.modal-close:hover{background:#2a4d75}.zoom-reset{min-width:58px;padding:0 10px}.modal-close{font-size:25px;line-height:1}
+.modal-body{min-height:0;flex:1;display:grid;grid-template-columns:minmax(250px,330px) 1fr}.modal-info{overflow:auto;padding:20px 19px;background:#0e1b2d;border-right:1px solid #29405f}.modal-viewer-link{display:block;padding:11px 14px;border-radius:9px;background:#1d6cad;color:#fff;text-decoration:none;text-align:center;font-weight:750;margin-bottom:18px}.modal-viewer-link:hover{background:#2380c9}.detail-row{margin-top:14px;color:#d3dfec;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere}.detail-label{display:block;color:#8fb0d2;font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}.tag{font-size:12px;color:#d5e7f8;background:#1b3857;border:1px solid #31577c;border-radius:999px;padding:4px 9px}
+.preview-stage{position:relative;min-width:0;min-height:0;overflow:auto;display:flex;align-items:flex-start;justify-content:center;background:#050a11;padding:18px}.large-preview{display:block;max-width:none;max-height:none;flex:0 0 auto;box-shadow:0 7px 30px #0008;background:#fff}.loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#b7c7d9;text-align:center;padding:24px}.loading[hidden]{display:none}
+@media (max-width:760px){.small-thumb{height:158px}.modal-header{height:auto;min-height:64px;flex-wrap:wrap;padding:9px 10px}.modal-heading{flex-basis:calc(100% - 52px)}.modal-tools{order:3;width:100%;justify-content:center}.modal-close{position:absolute;right:10px;top:10px}.modal-body{display:flex;flex-direction:column}.modal-info{max-height:30vh;border-right:0;border-bottom:1px solid #29405f;padding:13px 14px}.modal-viewer-link{margin-bottom:10px}.detail-row{margin-top:8px}.preview-stage{flex:1;padding:8px}.viewer-link{padding:10px}.detail-icon{width:44px;height:44px;flex-basis:44px}}
 </style></head><body>
 <header><div class="header-inner"><div><h1>Patoloji Pratik Slaytları</h1><div class="subtitle">Sanal mikroskop galerisi</div></div><div class="managed">Bilgiler masaüstü uygulamasından yönetilir</div></div></header>
 <main><div class="tools"><input id="q" type="search" placeholder="Organ, tanı, açıklama veya etiket ara"><p id="count"></p></div><div id="grid"></div></main>
-<footer>Küçük ön izlemeye veya “Sanal mikroskop” düğmesine basarak slaytı açabilirsiniz. Büyük ön izleme yalnızca istendiğinde yüklenir.</footer>
+<footer>Küçük ön izlemeye tıklayarak sanal mikroskobu, büyüteç simgesine tıklayarak ekranı kaplayan büyük ön izlemeyi açabilirsiniz.</footer>
+<div id="previewModal" class="preview-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+ <div class="modal-header">
+  <div class="modal-heading"><div id="modalTitle" class="modal-title"></div><div id="modalOrgan" class="modal-organ"></div></div>
+  <div class="modal-tools" aria-label="Ön izleme kontrolleri"><button class="zoom-button" type="button" data-modal-zoom="out" aria-label="Uzaklaştır">−</button><button class="zoom-button zoom-reset" type="button" data-modal-zoom="reset">100%</button><button class="zoom-button" type="button" data-modal-zoom="in" aria-label="Yakınlaştır">+</button></div>
+  <button id="modalClose" class="modal-close" type="button" aria-label="Kapat" title="Kapat">×</button>
+ </div>
+ <div class="modal-body"><aside id="modalInfo" class="modal-info"></aside><div id="previewStage" class="preview-stage"><div id="modalLoading" class="loading">Büyük ön izleme yükleniyor…</div><img id="modalImage" class="large-preview" alt="" hidden></div></div>
+</div>
 <script>
 let all=[];const grid=document.getElementById('grid'),q=document.getElementById('q'),count=document.getElementById('count');
+const modal=document.getElementById('previewModal'),modalTitle=document.getElementById('modalTitle'),modalOrgan=document.getElementById('modalOrgan'),modalInfo=document.getElementById('modalInfo'),modalImage=document.getElementById('modalImage'),modalLoading=document.getElementById('modalLoading'),previewStage=document.getElementById('previewStage'),modalClose=document.getElementById('modalClose');
+let activeItem=null,lastFocused=null,fitWidth=0,zoomLevel=1;
 function esc(x){return String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function parseCSV(text){
   const rows=[];let row=[],cell='',quoted=false;
@@ -37,29 +49,48 @@ function parseCSV(text){
   const head=(rows.shift()||[]).map(x=>x.replace(/^\uFEFF/,''));
   return rows.filter(r=>r.some(Boolean)).map(r=>Object.fromEntries(head.map((h,i)=>[h,r[i]||''])));
 }
-function detailContent(x){
+function infoContent(x){
  const tags=String(x.tags||'').split(',').map(t=>t.trim()).filter(Boolean);
- const title=(x.title||'').trim();const diagnosis=(x.diagnosis||x.title||'').trim();
+ const diagnosis=(x.diagnosis||x.title||'Tanı bilgisi bekleniyor').trim();const title=(x.title||'').trim();
  const titleRow=title&&title!==diagnosis?`<div class="detail-row"><span class="detail-label">Başlık</span>${esc(title)}</div>`:'';
- const description=x.description?`<div class="detail-row"><span class="detail-label">Açıklama</span>${esc(x.description)}</div>`:'';
+ const description=x.description?`<div class="detail-row"><span class="detail-label">Açıklama</span>${esc(x.description)}</div>`:'<div class="detail-row"><span class="detail-label">Açıklama</span>Henüz açıklama eklenmemiş.</div>';
  const tagBlock=tags.length?`<div class="tags">${tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>`:'';
- return `${titleRow}${description}${tagBlock}<div class="preview"><div class="preview-toolbar"><span class="preview-title">Büyük ön izleme</span><div class="zoom-controls"><button class="zoom-button" type="button" data-zoom="out" aria-label="Uzaklaştır">−</button><button class="zoom-button" type="button" data-zoom="reset">100%</button><button class="zoom-button" type="button" data-zoom="in" aria-label="Yakınlaştır">+</button></div></div><div class="preview-viewport"><div class="loading">Ön izleme açılınca yüklenecek.</div><img class="large-preview" data-src="${esc(x.thumbnail_url)}" alt="${esc(diagnosis)} büyük ön izleme" hidden></div></div><button class="detail-close" type="button">Detayları kapat</button>`;
+ return `<a class="modal-viewer-link" href="${esc(x.page_url)}">Sanal mikroskobu aç</a>${titleRow}${description}${tagBlock}`;
 }
+function icon(){return `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.5 4.5"></path><path d="M8.5 11h5M11 8.5v5"></path></svg>`}
 function draw(){
  const term=q.value.toLocaleLowerCase('tr');
  const rows=all.filter(x=>JSON.stringify(x).toLocaleLowerCase('tr').includes(term));
  count.textContent=rows.length+' slayt';
- grid.innerHTML=rows.length?rows.map(x=>{const diagnosis=x.diagnosis||x.title||'Tanı bilgisi bekleniyor';const small=x.small_thumbnail_url||x.thumbnail_url;return `<article class="card"><a class="thumb-link" href="${esc(x.page_url)}" title="Sanal mikroskobu aç"><img class="small-thumb" loading="lazy" decoding="async" src="${esc(small)}" alt="${esc(diagnosis)}"></a><div class="text"><div class="diagnosis">${esc(diagnosis)}</div><div class="organ">${esc(x.organ||'')}</div><div class="actions"><a class="viewer-link" href="${esc(x.page_url)}">Sanal mikroskop</a><button class="detail-toggle" type="button" aria-expanded="false">Detay ve büyük ön izleme</button></div><section class="details" hidden>${detailContent(x)}</section></div></article>`;}).join(''):'<div class="empty">Aramayla eşleşen slayt bulunamadı.</div>';
+ grid.innerHTML=rows.length?rows.map((x,i)=>{const diagnosis=x.diagnosis||x.title||'Tanı bilgisi bekleniyor';const small=x.small_thumbnail_url||x.thumbnail_url;return `<article class="card"><a class="thumb-link" href="${esc(x.page_url)}" title="Sanal mikroskobu aç"><img class="small-thumb" loading="lazy" decoding="async" src="${esc(small)}" alt="${esc(diagnosis)}"></a><div class="text"><div class="diagnosis">${esc(diagnosis)}</div><div class="organ">${esc(x.organ||'')}</div><div class="actions"><a class="viewer-link" href="${esc(x.page_url)}">Sanal mikroskop</a><button class="detail-icon" type="button" data-preview-index="${i}" aria-label="Ayrıntıları ve büyük ön izlemeyi aç" title="Ayrıntılar ve büyük ön izleme">${icon()}</button></div></div></article>`;}).join(''):'<div class="empty">Aramayla eşleşen slayt bulunamadı.</div>';
+ grid.querySelectorAll('[data-preview-index]').forEach((button,i)=>{button.dataset.itemId=rows[i].gallery_id||String(i)});
 }
-function setZoom(img,value){const z=Math.max(.5,Math.min(4,value));img.dataset.zoom=String(z);img.style.width=(z*100)+'%';}
+function applyZoom(value){
+ zoomLevel=Math.max(.5,Math.min(4,value));
+ if(!fitWidth||modalImage.hidden)return;
+ modalImage.style.width=Math.round(fitWidth*zoomLevel)+'px';modalImage.style.height='auto';modalImage.dataset.zoom=String(zoomLevel);
+ const reset=modal.querySelector('[data-modal-zoom="reset"]');if(reset)reset.textContent=Math.round(zoomLevel*100)+'%';
+}
+function fitPreview(){
+ if(!modalImage.naturalWidth||!modalImage.naturalHeight)return;
+ const availableWidth=Math.max(100,previewStage.clientWidth-36),availableHeight=Math.max(100,previewStage.clientHeight-36);
+ fitWidth=Math.min(modalImage.naturalWidth,availableWidth,availableHeight*(modalImage.naturalWidth/modalImage.naturalHeight));
+ applyZoom(1);previewStage.scrollTop=0;previewStage.scrollLeft=0;
+}
+function openPreview(x,trigger){
+ activeItem=x;lastFocused=trigger;modalTitle.textContent=x.diagnosis||x.title||'Tanı bilgisi bekleniyor';modalOrgan.textContent=x.organ||'';modalInfo.innerHTML=infoContent(x);modalImage.alt=(x.diagnosis||x.title||'')+' büyük ön izleme';modalImage.hidden=true;modalLoading.hidden=false;modalLoading.textContent='Büyük ön izleme yükleniyor…';modal.hidden=false;document.body.classList.add('modal-open');modalImage.onload=()=>{modalLoading.hidden=true;modalImage.hidden=false;requestAnimationFrame(fitPreview)};modalImage.onerror=()=>{modalLoading.hidden=false;modalLoading.textContent='Büyük ön izleme yüklenemedi.'};modalImage.src=x.thumbnail_url;modalClose.focus();
+}
+function closePreview(){
+ if(modal.hidden)return;modal.hidden=true;document.body.classList.remove('modal-open');modalImage.onload=null;modalImage.onerror=null;modalImage.removeAttribute('src');modalImage.hidden=true;modalImage.style.width='';fitWidth=0;zoomLevel=1;activeItem=null;if(lastFocused)lastFocused.focus();
+}
 grid.addEventListener('click',event=>{
- const toggle=event.target.closest('.detail-toggle');
- if(toggle){const card=toggle.closest('.card'),details=card.querySelector('.details'),opening=details.hidden;details.hidden=!opening;toggle.setAttribute('aria-expanded',String(opening));toggle.textContent=opening?'Detayları gizle':'Detay ve büyük ön izleme';if(opening){const img=details.querySelector('.large-preview'),loading=details.querySelector('.loading');if(!img.getAttribute('src')){loading.textContent='Büyük ön izleme yükleniyor…';img.onload=()=>{loading.hidden=true;img.hidden=false;setZoom(img,1)};img.onerror=()=>{loading.textContent='Büyük ön izleme yüklenemedi.'};img.src=img.dataset.src;}}return;}
- const close=event.target.closest('.detail-close');
- if(close){const card=close.closest('.card'),details=card.querySelector('.details'),button=card.querySelector('.detail-toggle'),img=details.querySelector('.large-preview'),loading=details.querySelector('.loading');details.hidden=true;button.setAttribute('aria-expanded','false');button.textContent='Detay ve büyük ön izleme';img.removeAttribute('src');img.hidden=true;img.style.width='100%';loading.hidden=false;loading.textContent='Ön izleme açılınca yüklenecek.';card.scrollIntoView({block:'nearest'});return;}
- const zoom=event.target.closest('[data-zoom]');
- if(zoom){const img=zoom.closest('.preview').querySelector('.large-preview');if(img.hidden)return;const current=Number(img.dataset.zoom||1);setZoom(img,zoom.dataset.zoom==='in'?current+.25:zoom.dataset.zoom==='out'?current-.25:1);}
+ const button=event.target.closest('[data-preview-index]');if(!button)return;
+ const item=all.find(x=>(x.gallery_id||'')===button.dataset.itemId);if(item)openPreview(item,button);
 });
+modal.addEventListener('click',event=>{const zoom=event.target.closest('[data-modal-zoom]');if(zoom){const action=zoom.dataset.modalZoom;applyZoom(action==='in'?zoomLevel+.25:action==='out'?zoomLevel-.25:1);}});
+modalClose.addEventListener('click',closePreview);
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!modal.hidden)closePreview();});
+window.addEventListener('resize',()=>{if(!modal.hidden&&!modalImage.hidden)fitPreview();});
 Promise.all([
  fetch('slides.json?'+Date.now()).then(r=>r.json()),
  fetch("slayt_bilgileri.csv"+'?'+Date.now()).then(r=>r.text()).then(parseCSV).catch(()=>[])
