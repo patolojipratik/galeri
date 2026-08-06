@@ -1,9 +1,17 @@
-# Patoloji Pratik Slaytlari
+# Patoloji Pratik Slaytları
 
 Sanal mikroskop ana galerisi.
 
-## Slayt adlarini ve aciklamalarini duzenleme
+## Masaüstü uygulaması: 3.6.4 Final
 
-Bilgiler Patoloji Pratik masaustu uygulamasindaki `Slayt bilgilerini duzenle` penceresinden yonetilir. Baslik, organ, tani, aciklama ve etiketler uygulama tarafindan guvenli CSV biciminde yayinlanir.
+- [Güvenli tam paket](indir/PatolojiPratikSlaytYayincisi_v3.6.4.zip)
+- [SHA-256 doğrulama dosyası](indir/PatolojiPratikSlaytYayincisi_v3.6.4.zip.sha256.txt)
+- [Son sürüm notları](SURUM_NOTLARI.md)
 
-Ana sayfa kucuk on izlemeleri kullanir; buyuk on izlemeler yalnizca kullanici karttaki asagi ok simgesine bastiginda yuklenir.
+Yayımlanan uygulama paketi kullanıcı verisi içermez. GitHub tokeni, `config`, `data/slides.csv`, `repos`, `work`, `logs` ve kaynak KFB/SVS dosyaları pakete alınmaz.
+
+## Slayt bilgilerini düzenleme
+
+Başlık, organ, tanı, açıklama ve etiketler Patoloji Pratik masaüstü uygulamasındaki `Slayt bilgilerini düzenle` penceresinden yönetilir.
+
+Ana sayfa küçük ön izlemeleri kullanır; büyük ön izlemeler yalnızca kullanıcı karttaki aşağı ok simgesine bastığında yüklenir.
