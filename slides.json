@@ -1063,50 +1063,5 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-071/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-071/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-071.jpg"
-  },
-  {
-    "gallery_id": "gallery-073",
-    "number": 73,
-    "display_order": 72,
-    "title": "Ödem",
-    "organ": "Akciğer",
-    "diagnosis": "Akciğer ödemi",
-    "description": "",
-    "tags": "",
-    "source_format": "SVS",
-    "page_url": "https://patolojipratik.github.io/gallery-073/",
-    "thumbnail_url": "https://patolojipratik.github.io/gallery-073/thumbnail.jpg",
-    "label_url": "https://patolojipratik.github.io/gallery-073/label.jpg",
-    "small_thumbnail_url": "thumbs/gallery-073.jpg"
-  },
-  {
-    "gallery_id": "gallery-074",
-    "number": 74,
-    "display_order": 73,
-    "title": "Nekroz",
-    "organ": "",
-    "diagnosis": "Tümör nekrozu",
-    "description": "",
-    "tags": "",
-    "source_format": "SVS",
-    "page_url": "https://patolojipratik.github.io/gallery-074/",
-    "thumbnail_url": "https://patolojipratik.github.io/gallery-074/thumbnail.jpg",
-    "label_url": "https://patolojipratik.github.io/gallery-074/label.jpg",
-    "small_thumbnail_url": "thumbs/gallery-074.jpg"
-  },
-  {
-    "gallery_id": "gallery-075",
-    "number": 75,
-    "display_order": 74,
-    "title": "Pleomorfik adenom",
-    "organ": "Tükrük bezi",
-    "diagnosis": "Parotis Pleomorfik adenom",
-    "description": "",
-    "tags": "",
-    "source_format": "SVS",
-    "page_url": "https://patolojipratik.github.io/gallery-075/",
-    "thumbnail_url": "https://patolojipratik.github.io/gallery-075/thumbnail.jpg",
-    "label_url": "https://patolojipratik.github.io/gallery-075/label.jpg",
-    "small_thumbnail_url": "thumbs/gallery-075.jpg"
   }
 ]
