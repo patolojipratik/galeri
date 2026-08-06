@@ -1078,5 +1078,20 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-073/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-073/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-073.jpg"
+  },
+  {
+    "gallery_id": "gallery-074",
+    "number": 74,
+    "display_order": 73,
+    "title": "Pratik slayti 074",
+    "organ": "",
+    "diagnosis": "",
+    "description": "",
+    "tags": "",
+    "source_format": "SVS",
+    "page_url": "https://patolojipratik.github.io/gallery-074/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-074/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-074/label.jpg",
+    "small_thumbnail_url": "thumbs/gallery-074.jpg"
   }
 ]
