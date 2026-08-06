@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "version": "3.6.5",
+  "title": "Patoloji Pratik Slayt Yayıncısı 3.6.5 Final",
+  "package": "PatolojiPratikSlaytYayincisi_v3.6.5.zip",
+  "sha256": "19deeb8691327272de786cdb652c6044d651535de7ad52321b16f6c27746ba9b",
+  "signature": "PM4AadsRqSsbs9bdZlIZ96xic_qcCS-1x3zb0iJCqcMjLYDsrmSbg2vqmBZJB2Wpg3tlDmIEjojHjsYB3WhICw",
+  "release_notes": "SURUM_NOTLARI.md",
+  "mandatory": false,
+  "published_at": "2026-08-06T21:41:00+03:00"
+}
