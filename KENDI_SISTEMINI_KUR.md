@@ -1,32 +1,72 @@
 # Bu sistemi kendi arşivinize uyarlama
 
-Patoloji Pratik Slayt Yayıncısı, başka bir kurum veya kişisel arşiv için uyarlanabilir. Her kurulum kendi GitHub hesabını, repo adlarını, klasörlerini ve güncelleme imzalama anahtarını kullanmalıdır.
+Bu yöntem başka bir patolog, eğitim grubu veya kurum tarafından kendi anonim sanal slayt arşivi için uyarlanabilir. Patoloji Pratik hesabına bağlanmanız gerekmez ve bağlanmamalısınız.
 
-## Değiştirilecek temel ayarlar
+## Önce karar verin
 
-`config/settings.json` içinde:
+Kendi kurulumunuz için ayrı değerler kullanın:
+
+- kendi GitHub kullanıcı/organizasyon adınız,
+- kendi ana galeri repo adınız,
+- kendi `gallery-` benzeri repo önekiniz,
+- kendi kaynak slayt klasörünüz,
+- kendi güncelleme kanalı adresiniz,
+- kendi GitHub tokeniniz,
+- kendi güncelleme imzalama anahtarınız.
+
+## 1. Windows bilgisayarını hazırlayın
+
+Gerekli temel bileşenler:
+
+1. Python 3.10 veya daha yeni
+2. Git for Windows (veya GitHub Desktop içindeki Git)
+3. Yeterli boş disk alanı
+4. İnternet bağlantısı
+5. Bir GitHub hesabı veya organizasyonu
+
+## 2. Klasörleri oluşturun
+
+Örnek:
+
+```text
+E:\Slaytlar
+E:\github
+```
+
+Sürücü harfi ve klasör adları size ait olabilir. Ancak bir kez belirledikten sonra mümkün olduğunca sabit tutun.
+
+## 3. Program dosyalarını E:\github içine koyun
+
+İlk kurulumdan sonra:
+
+```text
+KURULUM.bat
+```
+
+çalıştırın. Bu işlem `.venv` sanal Python ortamını ve gerekli paketleri oluşturur.
+
+## 4. Kendi ayarlarınızı yapın
+
+`config/settings.json` içinde kendi değerlerinizi kullanın. Örnek:
 
 ```json
 {
-  "github_username": "kendi-github-kullanici-adiniz",
+  "github_username": "KENDI_GITHUB_ADINIZ",
   "gallery_repo": "galeri",
   "repo_prefix": "gallery-",
   "source_dir": "E:\\Slaytlar",
   "work_root": "E:\\github",
-  "update_manifest_url": "https://raw.githubusercontent.com/KULLANICI/GALERI/main/guncelleme/latest.json"
+  "update_manifest_url": "https://raw.githubusercontent.com/KENDI_GITHUB_ADINIZ/galeri/main/guncelleme/latest.json"
 }
 ```
 
-- `github_username`: yayın yapılacak GitHub kullanıcı/organizasyon adı
-- `gallery_repo`: ana galeri reposu
-- `repo_prefix`: her sanal slayt için oluşturulan repo öneki
-- `source_dir`: KFB/SVS kaynak klasörü
-- `work_root`: programın çalışma klasörü
-- `update_manifest_url`: kendi güncelleme kanalınızın `latest.json` adresi
+Patoloji Pratik güncelleme kanalını kendi bağımsız kurulumunuzda kullanmayın; aksi halde bizim sürümlerimiz sizin özelleştirmelerinizi değiştirebilir.
 
-## GitHub tokeni
+## 5. GitHub tokeni oluşturun
 
-Fine-grained tokeni yalnızca kendi hesap/repolarınızla sınırlandırın. Gereken izinler kullanım biçimine göre şunlardır:
+Otomatik repo oluşturma, push, Actions ve Pages yönetimi için GitHub API/token gerekir.
+
+Tokeni mümkün olduğunca yalnızca kendi gerekli repolarınızla sınırlandırın. Uygulamanın kullandığı özelliklere göre şu yetkiler gerekebilir:
 
 - Contents: Read and write
 - Workflows: Read and write
@@ -34,55 +74,64 @@ Fine-grained tokeni yalnızca kendi hesap/repolarınızla sınırlandırın. Ger
 - Pages: Read and write
 - Administration: Read and write
 
-Tokeni `GITHUB_BAGLA.bat` ile Windows kimlik kasasına kaydedin. Tokeni repo içine koymayın.
+Tokeni:
 
-## Kendi güncelleme anahtarınızı oluşturun
+```text
+GITHUB_BAGLA.bat
+```
 
-Bağımsız bir sistem kurmadan önce:
+ile Windows kimlik kasasına kaydedin. Tokeni repo içine koymayın.
+
+## 6. Kendi güncelleme imzalama anahtarınızı oluşturun
+
+Bağımsız sistem için:
 
 ```text
 YENI_SISTEM_ANAHTARI_OLUSTUR.bat
 ```
 
-çalıştırın. Bu işlem:
+çalıştırın.
 
-- `config\update_signing_private.key` özel anahtarını,
-- `update_trusted_public.key` açık anahtarını
+Oluşan **özel anahtarı** çevrimdışı yedekleyin ve asla GitHub'a yüklemeyin. Açık anahtar uygulamayla dağıtılır.
 
-oluşturur.
+Patoloji Pratik'e ait özel anahtarı başka bir sistemde kullanmayın.
 
-Özel anahtarı çevrimdışı yedekleyin ve asla GitHub'a yüklemeyin. Açık anahtar uygulamayla dağıtılır. Sistem kullanıcılara dağıtıldıktan sonra anahtarı değiştirmek, eski kullanıcıların yeni paketleri reddetmesine neden olur.
+## 7. İlk slaytları ekleyin
 
-## Güncelleme yayımlama
+Tamamen anonim KFB/SVS veya desteklenen başka WSI dosyalarını kaynak klasörünüze koyun ve:
 
-İmzalanacak güncelleme ZIP'i `update-package.json` içermelidir. Ardından:
+```text
+BASLAT.bat
+```
+
+çalıştırın.
+
+Program dönüşüm, repo oluşturma, push, Pages ve ana galeri işlemlerini sırayla yönetir.
+
+## 8. Kendi güncellemenizi yayımlayın
+
+Yeni sürüm ZIP'i hazırlandıktan sonra:
 
 ```text
 GUNCELLEME_YAYINLA.bat
 ```
 
-çalıştırılır ve ZIP seçilir. Araç:
+ile kendi `galeri/guncelleme/` kanalınıza yayımlayın.
 
-- paket içi dosya SHA-256 değerlerini doğrular,
-- paketi özel anahtarla imzalar,
-- `guncelleme/latest.json`, ZIP, SHA-256, imza ve sürüm notlarını hazırlar,
-- kendi ana galeri reponuza güvenli bir commit olarak gönderir.
+## 9. Yapay zekâ ile kurulum
 
-## Korunan kullanıcı verileri
-
-Güncelleme sistemi aşağıdaki yolları içeren paketleri reddeder:
+ChatGPT, Codex, Claude, Gemini veya benzeri bir araçtan yardım alıyorsanız araca önce repo kökündeki:
 
 ```text
-config/
-data/
-repos/
-work/
-logs/
-.venv/
+AGENTS.md
 ```
 
-Böylece tanılar, slayt envanteri, GitHub tokeni, yerel repo kalıntıları ve kaynak slaytlar uygulama güncellemesiyle değiştirilemez.
+dosyasını okumasını söyleyin. Bu dosya hangi verilerin korunacağını, hangi yolların değiştirilebileceğini ve kurulum/kurtarma sırasını yapay zekâ için açık biçimde tanımlar.
 
-## Lisans ve sorumluluk
+## 10. Hasta verisi yayımlamayın
 
-Kendi uyarlamanızda kullandığınız üçüncü taraf kütüphanelerin lisanslarını koruyun. Hastaya ait kimlik bilgisi içeren etiketleri veya klinik verileri herkese açık GitHub reposuna yüklemeyin. Yalnızca tamamen anonim eğitim slaytları yayımlayın.
+Etiket görselleri ve metadata dahil her şeyi yayımlamadan önce anonimleştirin. Herkese açık GitHub reposuna hasta adı, protokol numarası veya başka tanımlayıcı bilgi koymayın.
+
+## 11. Lisans
+
+Bu yöntemi başkalarının açıkça kopyalayıp değiştirmesine izin vermek istiyorsanız kendi reponuza uygun bir açık kaynak `LICENSE` dosyası ekleyin. Lisans seçimi proje sahibinin kararıdır.
