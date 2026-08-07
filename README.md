@@ -2,10 +2,10 @@
 
 Sanal mikroskop ana galerisi.
 
-## Masaüstü uygulaması: 3.6.5 Final
+## Masaüstü uygulaması: 3.6.8 Final
 
-- [Güvenli tam paket](indir/PatolojiPratikSlaytYayincisi_v3.6.5.zip)
-- [SHA-256 doğrulama dosyası](indir/PatolojiPratikSlaytYayincisi_v3.6.5.zip.sha256.txt)
+- [Güvenli tam paket](indir/PatolojiPratikSlaytYayincisi_v3.6.8.zip)
+- [SHA-256 doğrulama dosyası](indir/PatolojiPratikSlaytYayincisi_v3.6.8.zip.sha256.txt)
 - [Son sürüm notları](SURUM_NOTLARI.md)
 
 Yayımlanan uygulama paketi kullanıcı verisi içermez. GitHub tokeni, `config`, `data/slides.csv`, `repos`, `work`, `logs` ve kaynak KFB/SVS dosyaları pakete alınmaz.
