@@ -1,8 +1,8 @@
 {
-  "version": "3.6.4 Final",
+  "version": "3.6.5 Final",
   "release_date": "2026-08-06",
-  "download": "indir/PatolojiPratikSlaytYayincisi_v3.6.4.zip",
-  "sha256": "afcdc0fad4da8e9e5d6c7c734ea480505d03e4e6be69c900ec83a799403706e4",
+  "download": "",
+  "sha256": "",
   "release_notes": "SURUM_NOTLARI.md",
   "contains_user_data": false
 }
