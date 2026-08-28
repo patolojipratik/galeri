@@ -1423,5 +1423,20 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-096/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-096/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-096.jpg"
+  },
+  {
+    "gallery_id": "gallery-097",
+    "number": 97,
+    "display_order": 96,
+    "title": "Warthin tümörü",
+    "organ": "Parotis",
+    "diagnosis": "Warthin tümörü",
+    "description": "",
+    "tags": "",
+    "source_format": "SVS",
+    "page_url": "https://patolojipratik.github.io/gallery-097/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-097/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-097/label.jpg",
+    "small_thumbnail_url": "thumbs/gallery-097.jpg"
   }
 ]
