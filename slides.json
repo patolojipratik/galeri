@@ -1348,5 +1348,20 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-091/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-091/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-091.jpg"
+  },
+  {
+    "gallery_id": "gallery-092",
+    "number": 92,
+    "display_order": 91,
+    "title": "Kronik inflamasyon",
+    "organ": "",
+    "diagnosis": "Karaciğer",
+    "description": "",
+    "tags": "",
+    "source_format": "SVS",
+    "page_url": "https://patolojipratik.github.io/gallery-092/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-092/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-092/label.jpg",
+    "small_thumbnail_url": "thumbs/gallery-092.jpg"
   }
 ]
