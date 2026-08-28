@@ -1273,5 +1273,20 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-086/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-086/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-086.jpg"
+  },
+  {
+    "gallery_id": "gallery-087",
+    "number": 87,
+    "display_order": 86,
+    "title": "Granülomatöz lenfadenit",
+    "organ": "Lenf nodu",
+    "diagnosis": "Granülomatöz lenfadenit",
+    "description": "",
+    "tags": "",
+    "source_format": "SVS",
+    "page_url": "https://patolojipratik.github.io/gallery-087/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-087/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-087/label.jpg",
+    "small_thumbnail_url": "thumbs/gallery-087.jpg"
   }
 ]
