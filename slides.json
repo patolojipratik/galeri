@@ -1378,5 +1378,20 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-093/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-093/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-093.jpg"
+  },
+  {
+    "gallery_id": "gallery-094",
+    "number": 94,
+    "display_order": 93,
+    "title": "Prostat adeno ca",
+    "organ": "Prostat",
+    "diagnosis": "Prostat adenokarsinomu",
+    "description": "",
+    "tags": "",
+    "source_format": "SVS",
+    "page_url": "https://patolojipratik.github.io/gallery-094/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-094/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-094/label.jpg",
+    "small_thumbnail_url": "thumbs/gallery-094.jpg"
   }
 ]
