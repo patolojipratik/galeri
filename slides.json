@@ -1138,5 +1138,20 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-077/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-077/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-077.jpg"
+  },
+  {
+    "gallery_id": "gallery-078",
+    "number": 78,
+    "display_order": 77,
+    "title": "Amfizem",
+    "organ": "Akciğer",
+    "diagnosis": "Akciğer amfizemi",
+    "description": "",
+    "tags": "",
+    "source_format": "SVS",
+    "page_url": "https://patolojipratik.github.io/gallery-078/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-078/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-078/label.jpg",
+    "small_thumbnail_url": "thumbs/gallery-078.jpg"
   }
 ]
