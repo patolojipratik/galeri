@@ -1318,5 +1318,20 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-089/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-089/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-089.jpg"
+  },
+  {
+    "gallery_id": "gallery-090",
+    "number": 90,
+    "display_order": 89,
+    "title": "Kas atrofisi",
+    "organ": "Çizgili kas",
+    "diagnosis": "Çizgili kas atrofisi",
+    "description": "",
+    "tags": "",
+    "source_format": "SVS",
+    "page_url": "https://patolojipratik.github.io/gallery-090/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-090/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-090/label.jpg",
+    "small_thumbnail_url": "thumbs/gallery-090.jpg"
   }
 ]
