@@ -1288,5 +1288,20 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-087/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-087/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-087.jpg"
+  },
+  {
+    "gallery_id": "gallery-088",
+    "number": 88,
+    "display_order": 87,
+    "title": "Hodgkin lenfoma",
+    "organ": "Lenf nodu",
+    "diagnosis": "Hodgkin lenfoma",
+    "description": "",
+    "tags": "",
+    "source_format": "SVS",
+    "page_url": "https://patolojipratik.github.io/gallery-088/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-088/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-088/label.jpg",
+    "small_thumbnail_url": "thumbs/gallery-088.jpg"
   }
 ]
