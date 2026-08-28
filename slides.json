@@ -1123,5 +1123,20 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-076/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-076/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-076.jpg"
+  },
+  {
+    "gallery_id": "gallery-077",
+    "number": 77,
+    "display_order": 76,
+    "title": "Akciğer adenokarsinom",
+    "organ": "Akciğer",
+    "diagnosis": "Akciğer adenokarsinomu",
+    "description": "",
+    "tags": "",
+    "source_format": "SVS",
+    "page_url": "https://patolojipratik.github.io/gallery-077/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-077/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-077/label.jpg",
+    "small_thumbnail_url": "thumbs/gallery-077.jpg"
   }
 ]
