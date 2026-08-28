@@ -1228,5 +1228,20 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-083/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-083/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-083.jpg"
+  },
+  {
+    "gallery_id": "gallery-084",
+    "number": 84,
+    "display_order": 83,
+    "title": "Gastrit",
+    "organ": "Mide",
+    "diagnosis": "Gastrit",
+    "description": "HP gastriti",
+    "tags": "",
+    "source_format": "SVS",
+    "page_url": "https://patolojipratik.github.io/gallery-084/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-084/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-084/label.jpg",
+    "small_thumbnail_url": "thumbs/gallery-084.jpg"
   }
 ]
