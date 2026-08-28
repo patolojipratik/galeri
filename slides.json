@@ -1183,5 +1183,20 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-080/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-080/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-080.jpg"
+  },
+  {
+    "gallery_id": "gallery-081",
+    "number": 81,
+    "display_order": 80,
+    "title": "Merkel hücreli karsinom",
+    "organ": "Deri",
+    "diagnosis": "Deri Merkel hücreli karsinom",
+    "description": "Trukat byopsi",
+    "tags": "",
+    "source_format": "SVS",
+    "page_url": "https://patolojipratik.github.io/gallery-081/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-081/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-081/label.jpg",
+    "small_thumbnail_url": "thumbs/gallery-081.jpg"
   }
 ]
