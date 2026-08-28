@@ -25,3 +25,8 @@ Guncelleme kanali `galeri/guncelleme` klasorudur. Kurulan surum uygun token vars
 ## Guvenlik
 
 Token repoya yazilmaz. Kurtarma ZIP'i token veya kaynak slayt icermez. Ozel guncelleme imzalama anahtari `config` altinda kalir ve public GitHub'a gonderilmez.
+
+
+## 3.8.1 notu: GitHub `fetch first`
+
+Ana galeri veya guncelleme kanali ayni anda GitHub'a yazarsa uzakta yeni commit olusabilir. 3.8.1 ve sonrasinda uygulama force push yapmaz; uzaktaki commit'i alir, yerel commit'i onun uzerine guvenli sekilde yeniden uygular ve bir kez tekrar dener. Otomatik birlestirme cakisirsa durur. Bu durumda `data/slides.csv`, kaynak slaytlar ve yayinlanmis repolar silinmez.

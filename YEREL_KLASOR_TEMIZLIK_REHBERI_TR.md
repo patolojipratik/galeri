@@ -75,3 +75,8 @@ altina tasinir. Python `__pycache__` klasorleri silinir.
 `guncelleme/uygulandi/` daha once kurulmus paketleri, `guncelleme/yedek/` ise guncelleme oncesi geri-donus kopyalarini tutabilir. Bunlari aktif guncelleme sirasinda silmeyin. Sistem bir sure stabil calistiktan sonra eski paket/yedekler ayrica arsivlenebilir.
 
 GitHub'daki `galeri/guncelleme/` ise farklidir: `GUNCELLEME_YAYINLA.bat` yeni surumu yayinlarken eski ZIP/SHA/imza dosyalarini kaldirir ve yalnizca guncel paketi, `latest.json` ve `SURUM_NOTLARI.md` dosyalarini birakir.
+
+
+## 3.8.1 notu: GitHub `fetch first`
+
+Ana galeri veya guncelleme kanali ayni anda GitHub'a yazarsa uzakta yeni commit olusabilir. 3.8.1 ve sonrasinda uygulama force push yapmaz; uzaktaki commit'i alir, yerel commit'i onun uzerine guvenli sekilde yeniden uygular ve bir kez tekrar dener. Otomatik birlestirme cakisirsa durur. Bu durumda `data/slides.csv`, kaynak slaytlar ve yayinlanmis repolar silinmez.

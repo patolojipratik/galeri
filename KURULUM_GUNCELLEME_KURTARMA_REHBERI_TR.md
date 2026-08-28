@@ -61,3 +61,8 @@ Gunluk kucuk sistem yedegi `slides.csv`, settings ve konum bilgisini korur. Kayn
 ```
 
 Eski surum notlari, test raporlari ve artik gunluk kullanilmayan kok dosyalari `_arsiv` altina tasinir.
+
+
+## 3.8.1 notu: GitHub `fetch first`
+
+Ana galeri veya guncelleme kanali ayni anda GitHub'a yazarsa uzakta yeni commit olusabilir. 3.8.1 ve sonrasinda uygulama force push yapmaz; uzaktaki commit'i alir, yerel commit'i onun uzerine guvenli sekilde yeniden uygular ve bir kez tekrar dener. Otomatik birlestirme cakisirsa durur. Bu durumda `data/slides.csv`, kaynak slaytlar ve yayinlanmis repolar silinmez.
