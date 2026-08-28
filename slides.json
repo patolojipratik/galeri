@@ -1153,5 +1153,20 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-078/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-078/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-078.jpg"
+  },
+  {
+    "gallery_id": "gallery-079",
+    "number": 79,
+    "display_order": 78,
+    "title": "Akut apandisit",
+    "organ": "Appendiks",
+    "diagnosis": "Akut apandisit",
+    "description": "",
+    "tags": "",
+    "source_format": "SVS",
+    "page_url": "https://patolojipratik.github.io/gallery-079/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-079/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-079/label.jpg",
+    "small_thumbnail_url": "thumbs/gallery-079.jpg"
   }
 ]
