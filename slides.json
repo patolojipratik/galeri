@@ -1333,5 +1333,20 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-090/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-090/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-090.jpg"
+  },
+  {
+    "gallery_id": "gallery-091",
+    "number": 91,
+    "display_order": 90,
+    "title": "Karaciğer yağlanma",
+    "organ": "Karaciğer",
+    "diagnosis": "Karaciğer yağlanma (steatoz)",
+    "description": "",
+    "tags": "",
+    "source_format": "SVS",
+    "page_url": "https://patolojipratik.github.io/gallery-091/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-091/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-091/label.jpg",
+    "small_thumbnail_url": "thumbs/gallery-091.jpg"
   }
 ]
