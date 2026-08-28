@@ -1408,5 +1408,20 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-095/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-095/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-095.jpg"
+  },
+  {
+    "gallery_id": "gallery-096",
+    "number": 96,
+    "display_order": 95,
+    "title": "Trombüs",
+    "organ": "Hemoroid",
+    "diagnosis": "Venöz trombüs",
+    "description": "",
+    "tags": "",
+    "source_format": "SVS",
+    "page_url": "https://patolojipratik.github.io/gallery-096/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-096/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-096/label.jpg",
+    "small_thumbnail_url": "thumbs/gallery-096.jpg"
   }
 ]
