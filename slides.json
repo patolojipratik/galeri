@@ -1303,5 +1303,20 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-088/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-088/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-088.jpg"
+  },
+  {
+    "gallery_id": "gallery-089",
+    "number": 89,
+    "display_order": 88,
+    "title": "Hodgkin lenfoma Nazofarinks",
+    "organ": "Nazofarinks",
+    "diagnosis": "Hodgkin lenfoma",
+    "description": "",
+    "tags": "",
+    "source_format": "SVS",
+    "page_url": "https://patolojipratik.github.io/gallery-089/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-089/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-089/label.jpg",
+    "small_thumbnail_url": "thumbs/gallery-089.jpg"
   }
 ]
