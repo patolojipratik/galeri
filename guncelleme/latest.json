@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "version": "3.6.7",
-  "title": "3.6.7 Final",
-  "package": "PatolojiPratikSlaytYayincisi_v3.6.7.zip",
-  "sha256": "1bb1250343442a2e28787faff4e97e6e76ca2622468f4a8d5794dd07175e81c1",
-  "signature": "gF5Oi0qc1XYdHasXvrm2cMlpXkexQ7bQyRMjcEOHo9SwJIA_IpXcbPYGaZ-Oemb6szErj6RyQt9wThmzOSU7DA",
+  "version": "3.7.2",
+  "title": "3.7.2 Final",
+  "package": "PatolojiPratikSlaytYayincisi_v3.7.2.zip",
+  "sha256": "fd926bc00533cd451fe61b94560f440a5920d8515d817a0386cd9f470f27dd61",
+  "signature": "xa_ZfBfc_2QZnM7JhL5jkDN63jNG3MHcRUMvGri1m9EwiVBUf7l7NXqadnm4mUJgXK6K5OzmkpCbcCFI5pw8Cw",
   "release_notes": "SURUM_NOTLARI.md",
   "mandatory": false,
-  "published_at": "2026-08-07T05:58:30+00:00"
+  "published_at": "2026-08-28T12:39:28+00:00"
 }
