@@ -1393,5 +1393,20 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-094/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-094/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-094.jpg"
+  },
+  {
+    "gallery_id": "gallery-095",
+    "number": 95,
+    "display_order": 94,
+    "title": "Seminom",
+    "organ": "Testis",
+    "diagnosis": "Seminom",
+    "description": "",
+    "tags": "",
+    "source_format": "SVS",
+    "page_url": "https://patolojipratik.github.io/gallery-095/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-095/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-095/label.jpg",
+    "small_thumbnail_url": "thumbs/gallery-095.jpg"
   }
 ]
