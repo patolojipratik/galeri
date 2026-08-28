@@ -1198,5 +1198,20 @@
     "thumbnail_url": "https://patolojipratik.github.io/gallery-081/thumbnail.jpg",
     "label_url": "https://patolojipratik.github.io/gallery-081/label.jpg",
     "small_thumbnail_url": "thumbs/gallery-081.jpg"
+  },
+  {
+    "gallery_id": "gallery-082",
+    "number": 82,
+    "display_order": 81,
+    "title": "Psoriasis",
+    "organ": "Deri",
+    "diagnosis": "Psoriasis",
+    "description": "",
+    "tags": "",
+    "source_format": "SVS",
+    "page_url": "https://patolojipratik.github.io/gallery-082/",
+    "thumbnail_url": "https://patolojipratik.github.io/gallery-082/thumbnail.jpg",
+    "label_url": "https://patolojipratik.github.io/gallery-082/label.jpg",
+    "small_thumbnail_url": "thumbs/gallery-082.jpg"
   }
 ]
