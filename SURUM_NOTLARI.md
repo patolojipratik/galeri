@@ -1,4 +1,4 @@
-# Patoloji Pratik Slayt Yayıncısı 3.7.1 Final
+# Patoloji Pratik Slayt Yayıncısı 3.7.2 Final
 
 Yayın tarihi: 2026-08-06
 

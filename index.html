@@ -23,7 +23,9 @@ main{max-width:1240px;margin:auto;padding:24px 18px 40px}.tools{display:flex;gap
 .preview-modal:fullscreen{width:100%;height:100%;background:#07101d}.preview-modal:-webkit-full-screen{width:100%;height:100%;background:#07101d}
 @media (max-width:760px){header{padding:23px 14px}.managed{display:none}main{padding:18px 12px 32px}#grid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}.small-thumb{height:158px}.text{padding:13px 13px 0}.modal-header{min-height:60px;gap:6px;padding-top:calc(7px + env(safe-area-inset-top));padding-left:calc(9px + env(safe-area-inset-left));padding-right:calc(9px + env(safe-area-inset-right));flex-wrap:wrap}.modal-heading{flex:1 1 calc(100% - 49px)}.modal-tools{order:3;width:100%;justify-content:center;padding-bottom:2px}.modal-close{position:absolute;right:calc(9px + env(safe-area-inset-right));top:calc(7px + env(safe-area-inset-top))}.modal-body{display:flex;flex-direction:column}.modal-info{max-height:34vh;border-right:0;border-bottom:1px solid #29405f;padding:13px calc(14px + env(safe-area-inset-right)) 13px calc(14px + env(safe-area-inset-left))}.preview-stage{flex:1}.detail-row{margin-top:8px}.modal-button,.modal-close{height:38px;min-width:38px;padding:0 9px}.zoom-reset{min-width:58px}.gesture-hint{max-width:calc(100% - 24px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
 @media (max-width:390px){.modal-tools{gap:5px}.modal-button{padding:0 7px}.zoom-reset{min-width:54px}.modal-title{font-size:15px}}
-</style></head><body>
+.slide-title{font-size:18px;font-weight:750;line-height:1.28}.diagnosis-sub{color:#344b63;margin-top:6px;line-height:1.4;font-size:14px}
+</style><!-- PATOLOJI-TITLE-DIAGNOSIS-V1 -->
+</head><body>
 <header><div class="header-inner"><div><h1>Patoloji Pratik Slaytları</h1><div class="subtitle">Sanal mikroskop galerisi</div></div><div class="managed">Bilgiler masaüstü uygulamasından yönetilir</div></div></header>
 <main><div class="tools"><input id="q" type="search" placeholder="Organ, tanı, açıklama veya etiket ara"><p id="count"></p></div><div id="grid"></div></main>
 <footer>Küçük ön izlemeye tıklayınca sanal mikroskop açılır. 🔽 simgesi ayrıntıları ve büyük ön izlemeyi açar.</footer>
@@ -60,19 +62,26 @@ function parseCSV(text){
 }
 function infoContent(x){
  const tags=String(x.tags||'').split(',').map(t=>t.trim()).filter(Boolean);
- const diagnosis=(x.diagnosis||x.title||'Tanı bilgisi bekleniyor').trim();const title=(x.title||'').trim();
- const diagnosisRow=`<div class="detail-row"><span class="detail-label">Tanı</span>${esc(diagnosis)}</div>`;
- const titleRow=title&&title!==diagnosis?`<div class="detail-row"><span class="detail-label">Başlık</span>${esc(title)}</div>`:'';
- const organRow=x.organ?`<div class="detail-row"><span class="detail-label">Organ</span>${esc(x.organ)}</div>`:'';
+ const title=(x.title||x.diagnosis||'Başlık bilgisi bekleniyor').trim();
+ const diagnosis=(x.diagnosis||'').trim();
+ const titleRow=`<div class="detail-row"><span class="detail-label">Başlık</span>${esc(title)}</div>`;
+ const diagnosisRow=diagnosis&&diagnosis!==title?`<div class="detail-row"><span class="detail-label">Tanı</span>${esc(diagnosis)}</div>`:'';
+ const organRow=x.organ?`<div class="detail-row"><span class="detail-label">Organ / sistem</span>${esc(x.organ)}</div>`:'';
  const description=x.description?`<div class="detail-row"><span class="detail-label">Açıklama</span>${esc(x.description)}</div>`:'<div class="detail-row"><span class="detail-label">Açıklama</span>Henüz açıklama eklenmemiş.</div>';
  const tagBlock=tags.length?`<div class="tags">${tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>`:'';
- return `${diagnosisRow}${organRow}${titleRow}${description}${tagBlock}`;
+ return `${titleRow}${diagnosisRow}${organRow}${description}${tagBlock}`;
 }
 function draw(){
  const term=q.value.toLocaleLowerCase('tr');
  const rows=all.filter(x=>JSON.stringify(x).toLocaleLowerCase('tr').includes(term));
  count.textContent=rows.length+' slayt';
- grid.innerHTML=rows.length?rows.map((x,i)=>{const diagnosis=x.diagnosis||x.title||'Tanı bilgisi bekleniyor';const small=x.small_thumbnail_url||x.thumbnail_url;return `<article class="card"><a class="thumb-link" href="${esc(x.page_url)}" title="Sanal mikroskobu aç"><img class="small-thumb" loading="lazy" decoding="async" src="${esc(small)}" alt="${esc(diagnosis)}"></a><div class="text"><div class="diagnosis">${esc(diagnosis)}</div><div class="organ">${esc(x.organ||'')}</div></div><button class="expand-button" type="button" data-preview-index="${i}" aria-label="Ayrıntıları ve büyük ön izlemeyi aç" title="Ayrıntıları aç"><span aria-hidden="true">🔽</span></button></article>`;}).join(''):'<div class="empty">Aramayla eşleşen slayt bulunamadı.</div>';
+ grid.innerHTML=rows.length?rows.map((x,i)=>{
+  const title=(x.title||x.diagnosis||'Başlık bilgisi bekleniyor').trim();
+  const diagnosis=(x.diagnosis||'').trim();
+  const small=x.small_thumbnail_url||x.thumbnail_url;
+  const diagnosisLine=diagnosis&&diagnosis!==title?`<div class="diagnosis-sub">${esc(diagnosis)}</div>`:'';
+  return `<article class="card"><a class="thumb-link" href="${esc(x.page_url)}" title="Sanal mikroskobu aç"><img class="small-thumb" loading="lazy" decoding="async" src="${esc(small)}" alt="${esc(title)}"></a><div class="text"><div class="slide-title">${esc(title)}</div>${diagnosisLine}<div class="organ">${esc(x.organ||'')}</div></div><button class="expand-button" type="button" data-preview-index="${i}" aria-label="Ayrıntıları ve büyük ön izlemeyi aç" title="Ayrıntıları aç"><span aria-hidden="true">🔽</span></button></article>`;
+ }).join(''):'<div class="empty">Aramayla eşleşen slayt bulunamadı.</div>';
  grid.querySelectorAll('[data-preview-index]').forEach((button,i)=>{button.dataset.itemId=rows[i].gallery_id||String(i)});
 }
 function stagePoint(event){const rect=previewStage.getBoundingClientRect();return{x:event.clientX-rect.left,y:event.clientY-rect.top}}
@@ -101,7 +110,7 @@ function zoomAt(nextRatio,cx,cy){
 function centerZoom(nextRatio){zoomAt(nextRatio,previewStage.clientWidth/2,previewStage.clientHeight/2)}
 function showGestureHint(){clearTimeout(hintTimer);gestureHint.classList.add('show');hintTimer=setTimeout(()=>gestureHint.classList.remove('show'),3200)}
 function openPreview(x,trigger){
- activeItem=x;lastFocused=trigger;modalTitle.textContent=x.diagnosis||x.title||'Tanı bilgisi bekleniyor';modalOrgan.textContent=x.organ||'';modalInfo.innerHTML=infoContent(x);modalImage.alt=(x.diagnosis||x.title||'')+' büyük ön izleme';modalImage.hidden=true;modalLoading.hidden=false;modalLoading.textContent='Büyük ön izleme yükleniyor…';modal.hidden=false;modal.classList.remove('info-hidden');infoToggle.setAttribute('aria-pressed','true');document.body.classList.add('modal-open');pointers.clear();gesture=null;
+ activeItem=x;lastFocused=trigger;const previewTitle=x.title||x.diagnosis||'Başlık bilgisi bekleniyor';const previewDiagnosis=(x.diagnosis&&x.diagnosis!==previewTitle)?x.diagnosis:'';modalTitle.textContent=previewTitle;modalOrgan.textContent=[previewDiagnosis,x.organ||''].filter(Boolean).join(' • ');modalInfo.innerHTML=infoContent(x);modalImage.alt=previewTitle+' büyük ön izleme';modalImage.hidden=true;modalLoading.hidden=false;modalLoading.textContent='Büyük ön izleme yükleniyor…';modal.hidden=false;modal.classList.remove('info-hidden');infoToggle.setAttribute('aria-pressed','true');document.body.classList.add('modal-open');pointers.clear();gesture=null;
  modalImage.onload=()=>{modalLoading.hidden=true;modalImage.hidden=false;requestAnimationFrame(()=>{fitPreview(1);showGestureHint()})};
  modalImage.onerror=()=>{modalLoading.hidden=false;modalLoading.textContent='Büyük ön izleme yüklenemedi.'};modalImage.src=x.thumbnail_url;modalClose.focus();
 }
