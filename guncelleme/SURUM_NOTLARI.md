@@ -1,20 +1,36 @@
-# Patoloji Pratik Slayt Yayincisi 3.8.1 Final
+# Patoloji Pratik Slayt Yayıncısı 3.8.3 Final
 
-## Duzeltmeler
+## Ana düzeltme: yeni arayüzün gerçekten yüklenmesi
 
-- Ana galeri ile `guncelleme/` kanalinin ayni anda GitHub'a commit gondermesi sonucu olusan `fetch first / non-fast-forward` hatasi duzeltildi.
-- GitHub uzakta daha yeni commit bulursa uygulama artik **force push yapmadan** `fetch + rebase` ile bir kez guvenli yeniden dener. Cakisma olursa durur ve verileri korur.
-- Otomatik guncelleme-kanali esitlemesi ana GUI islem yaparken baslamaz; acilistan sonra sistem bosa cikinca calisir.
-- `BASLAT.bat` artik kok klasor sadelestirmesini kullanici onayi olmadan sessizce calistirmaz.
-- Program GUI acilisinda hata olursa `logs/startup.log` olusur ve hata penceresi gosterilir; sessizce kapanma azaltilmistir.
-- Kok klasor sadeleştirme araci belgeleri `_belgeler`, eski surum/test dosyalarini `_arsiv/gecmis_surumler`, diger eski teknik dosyalari `_arsiv/kok_eski_dosyalar` altina tasir. Kritik klasorler korunur.
+3.8.0–3.8.2 klasör sadeleştirmesinden sonra `_sistem/start_app.py`, `app.log_manager` modülünü ana GUI kimliği (`baslat.py`) ayarlanmadan önce içe aktarabiliyordu. Bu nedenle `app/__init__.py` GUI iyileştirmelerini kurmadan önbelleğe giriyor; program çalışsa da pencere başlığında **3.6.5 Final** kalabiliyor ve **Rehberler / Bakım ve sistem** düğmeleri görünmüyordu.
 
-## Guvenlik
+3.8.3'te başlatma sırası düzeltildi ve GUI bootstrap açıkça, idempotent biçimde çağrılıyor.
 
-- `data/slides.csv`, `config`, `repos`, `work`, `.venv`, `guncelleme` ve kaynak slaytlara dokunulmaz.
-- GitHub'da `README.md` ve `SCREEN.PNG` korunur.
-- `git push --force` kullanilmaz.
+Beklenen sonuç:
 
-## 3.8.0 kullananlar
+- başlıkta **3.8.3 Final**,
+- modern arayüz,
+- **Rehberler** düğmesi,
+- **Bakım ve sistem** düğmesi,
+- bakım ekranında yedek/log durum alanı ve bakım araçları.
 
-3.8.0 acilisinda `fetch first` gorduyseniz dosya silmeyin. 3.8.1'i `E:\github\guncelleme` icine koyup BASLAT ile kurun. Ana galeri bir sonraki yayinlamada uzaktaki commit ile yeniden hizalanir.
+## Dokümantasyon düzeni
+
+GitHub deposunda belgeler kolay dolaşılan yapıya alınır:
+
+- `README.md`: Türkçe + English ana tanıtım ve yol gösterme,
+- `REHBERLER.md`: tek dokümantasyon menüsü,
+- `HARICI_SSD_DEVAM_REHBERI.md`: SSD, evden çalışma, Bakım ve sistem, yedek/kurtarma,
+- `AGENTS.md`: AI/coding agent güvenlik talimatları,
+- `docs/`: ayrıntılı yönetim/kurulum belgeleri,
+- `guncelleme/`: yalnızca güncel paket, SHA-256, imza, latest.json ve sürüm notları.
+
+3.8.3 yayınında yanlışlıkla kısalmış README **bir kez** istenen kapsamlı sürümle geri yüklenir. Sonraki normal güncellemeler README'yi otomatik değiştirmez.
+
+Eski/çift kök belgeler ile çok eski `v3.3.1` dağıtım dosyası ve eski `surum.json` GitHub kökünden kaldırılır. Ana galeri verileri (`index.html`, `slides.json`, `slayt_bilgileri.csv`, `thumbs/`) ve `SCREEN.PNG` korunur.
+
+## Güvenlik
+
+- Force push kullanılmaz.
+- Kullanıcı `data`, `config`, kaynak slaytlar ve token güncelleme paketine alınmaz.
+- README temizliği yalnızca 3.8.3'ün tek seferlik repo düzenlemesidir.
