@@ -1,91 +1,63 @@
-# Patoloji Pratik — Kurulum, Güncelleme, Yayınlama ve Kurtarma Rehberi
+# Patoloji Pratik - Kurulum, guncelleme ve kurtarma
 
-## 1. Günlük başlatma
+## 1. Normal baslatma
 
-```text
-E:\github\BASLAT.bat
-```
+Kok klasorde `BASLAT.bat` calistirin. Teknik dosyalari elle acmaniz gerekmez.
 
-Program yeni sürümü otomatik kontrol eder. Güncelleme yoksa doğrudan açılır.
+## 2. Ilk kullanim / yeni bilgisayar
 
-## 2. Güncelleme dosyası size ZIP olarak geldiyse
+- SSD veya program klasorunu bilgisayara baglayin.
+- `BASLAT.bat` calistirin.
+- Surucu harfi degismis olabilir; program kendi konumunu otomatik algilar.
+- Kaynak slayt klasoru bulunamazsa secmeniz istenir.
+- Python ortami kullanilamiyorsa BASLAT kurulum yolunu yonetir.
+- Secilen konumlar `_sistem\konumlar.json` icinde kaydedilir.
 
-Üç dosyayı birlikte indirin:
+## 3. Guncelleme
 
-```text
-PatolojiPratikSlaytYayincisi_vX.Y.Z.zip
-PatolojiPratikSlaytYayincisi_vX.Y.Z.zip.sha256.txt
-PatolojiPratikSlaytYayincisi_vX.Y.Z.zip.sig
-```
+Elle indirilen imzali guncelleme setinin ZIP, SHA-256 ve SIG dosyalarini:
 
-Hepsini açmadan `E:\github\guncelleme` içine koyun. `BASLAT.bat` çalıştırın ve yeni sürümü kabul edin.
+`<program>\guncelleme`
 
-## 3. GitHub güncelleme kanalı
+klasorune koyun ve `BASLAT.bat` calistirin. Yeni surum teklif edilir.
 
-Kanal:
+GitHub'dan otomatik guncelleme kontrolu icin token gerekmez. Guncelleme kanalina yeni surum YAYINLAMAK icin bilgisayarda kayitli hedef GitHub tokeni gerekir.
 
-```text
-https://github.com/patolojipratik/galeri/tree/main/guncelleme
-```
+## 4. Guncelleme kanali
 
-3.7.2 ve sonrasında yerel güncelleme başarıyla kurulduktan sonra geçerli yayın tokeni bulunan bakım bilgisayarı paketi otomatik olarak bu kanala eşitler. Kanalda ZIP, SHA-256, imza, `latest.json` ve `SURUM_NOTLARI.md` birlikte tutulur.
+Kurulan guncelleme, uygun bakim bilgisayarinda otomatik olarak `patolojipratik/galeri/guncelleme` kanalina esitlemeye calisir.
+Elle esitlemek icin `Bakim ve sistem > Guncelleme kanalini esitle` kullanin.
 
-Manuel eşitleme gerekiyorsa:
+## 5. Web kontrolu
 
-```text
-E:\github\GUNCELLEME_KANALINI_ESITLE.bat
-```
+Actions basarili olsa bile tile erisimi ayrica kontrol edilmelidir. `Bakim ve sistem` ekraninda web goruntu kontrolu ve onarimi vardir.
 
-Güncellemeyi yalnızca indiren kullanıcının GitHub tokenine ihtiyacı yoktur. GitHub'a güncelleme/slayt **yazan** bilgisayarda token gerekir.
+## 6. Yedek
 
-## 4. Ana galeri
+Gunluk kucuk sistem yedegi `slides.csv`, settings ve konum bilgisini korur. Kaynak slaytlar ve token dahil edilmez.
 
-Ana galeri:
+`Kurtarma ZIP'i olustur` ile baska diskte saklanabilecek tek bir kurtarma paketi uretebilirsiniz.
 
-```text
-https://patolojipratik.github.io/galeri/
-```
+## 7. Kok klasor duzeni
 
-3.7.2 ile kartlarda **Başlık → Tanı → Organ / sistem** sırası kullanılır. Güncellemeden sonra bu görünümü yayımlamak için bir kez **Ana galeriyi yayımla** düğmesini kullanın.
-
-`README.md` ve `SCREEN.PNG` otomatik galeri/güncelleme yayınlarında korunur.
-
-## 5. Web slaytları karanlık/açılmıyorsa
+3.8.0 ve sonrasinda kok klasor sade tutulur:
 
 ```text
-E:\github\WEB_GORUNTU_ONAR.bat
+<program>\
+  BASLAT.bat
+  BURADAN_BASLAYIN.txt
+  app\
+  config\
+  data\
+  guncelleme\
+  logs\
+  repos\
+  work\
+  github\
+  .venv\
+  _sistem\
+  _belgeler\
+  _arsiv\
 ```
 
-sonra GitHub Actions'ın tamamlanmasını bekleyin ve:
-
-```text
-E:\github\WEB_GORUNTU_KONTROL.bat
-```
-
-çalıştırın. Geçici GitHub hatasında slayt repolarını silmeyin.
-
-## 6. Başka bilgisayara geçiş
-
-SSD `E:` değilse mümkünse Disk Yönetimi'nden `E:` yapın. Aksi halde `config/settings.json` yollarını yeni sürücü harfine göre değiştirin.
-
-Python 3.10+ 64-bit ve Git for Windows kurulu olmalıdır. `.venv` taşınan bilgisayarda sorun çıkarırsa yeniden oluşturulabilir; `data`, `config` ve kaynak slaytları silmeyin.
-
-## 7. SSD arızası / kurtarma
-
-Ayrı yedek tutulması gerekenler:
-
-```text
-E:\github\data\slides.csv
-E:\github\config\settings.json
-kaynak KFB/SVS dosyaları
-```
-
-GitHub'da yayınlanmış `gallery-XXX` repoları ikinci bir kurtarma kaynağıdır; aceleyle silinmemelidir.
-
-## 8. Ayrıntılı belgeler
-
-- `HARICI_SSD_DEVAM_REHBERI.md`
-- `GUNCELLEME_SISTEMI_README.md`
-- `YONETICI_REHBERI_TR.md`
-- `KENDI_SISTEMINI_KUR.md`
-- `AGENTS.md`
+Eski surum notlari, test raporlari ve artik gunluk kullanilmayan kok dosyalari `_arsiv` altina tasinir.

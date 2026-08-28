@@ -1,72 +1,27 @@
-# Patoloji Pratik Slayt Yayıncısı — Yönetici Rehberi
+# Patoloji Pratik yonetici rehberi
 
-Bu belge mevcut `patolojipratik` kurulumunun bakım ve sürüm yönetimi içindir.
+## Temel ilke
 
-## Normal iş akışı
+Gunluk kullanimda yalnizca `BASLAT.bat` kullanilir. Uygulama cekirdegi, config/data ve kaynak slaytlar elle temizlenmez.
 
-- Kaynak slaytlar: `E:\Pratik_slaytları`
-- Program: `E:\github\BASLAT.bat`
-- Ana galeri repo: `patolojipratik/galeri`
-- Güncelleme kanalı: `patolojipratik/galeri/guncelleme`
+## Kok duzen
 
-Aktif işlem bitmeden programı/SSD'yi kapatmayın.
+- `_sistem`: calistiricilar, guncelleyici, teknik araclar
+- `_belgeler`: kullanim ve kurulum dokumani
+- `_arsiv`: eski raporlar ve kok klasorden kaldirilan eski dosyalar
+- `guncelleme`: bekleyen/uygulanmis imzali paketler
+- `data`: slayt envanteri
+- `config`: ayarlar ve yerel yonetici anahtarlari
+- `repos`, `work`: yayin isleminin calisma alanlari
 
-## Güncelleme yayınlama — 3.7.2 ve sonrası
+## Konum tasinabilirligi
 
-Yeni imzalı paket (ZIP + SHA-256 + `.sig`) `E:\github\guncelleme` klasörüne konup `BASLAT.bat` ile başarıyla kurulunca, bilgisayarda geçerli `patolojipratik` yayın tokeni varsa yeni sürüm GitHub `guncelleme/` kanalına otomatik eşitlenir.
+Program `work_root` degerini kendi calistigi klasore gore gunceller. Kaynak klasor bulunamazsa ayni disk ve diger disk koklerinde arar; gerekirse kullaniciya sorar.
 
-Otomatik eşitlemenin sonucu:
+## Guncelleme yayini
 
-```text
-E:\github\logs\update_channel_sync.log
-```
+Guncelleme kanali `galeri/guncelleme` klasorudur. Kurulan surum uygun token varsa otomatik esitlemeye calisir. Manuel yol `Bakim ve sistem > Guncelleme kanalini esitle` secenegidir.
 
-ile izlenebilir.
+## Guvenlik
 
-Manuel tekrar:
-
-```text
-E:\github\GUNCELLEME_KANALINI_ESITLE.bat
-```
-
-Bu işlem yalnızca güncelleme dosyalarını ve kamuya açık rehberleri yayımlar. `README.md` ve `SCREEN.PNG` dokunulmaz.
-
-Yayın aracı GitHub'da daha yeni sürüm varsa eski paketi yayımlayarak kanalı geriye düşürmez.
-
-## Başlık / Tanı web gösterimi
-
-3.7.2 ile ana galeride standart:
-
-1. Başlık — kartın ana kalın satırı
-2. Tanı — başlıktan farklıysa ikinci satır
-3. Organ / sistem — üçüncü satır
-
-Ayrıntı panelinde Başlık → Tanı → Organ / sistem → Açıklama sırası kullanılır.
-
-Bu düzeltmenin ana siteye geçmesi için 3.7.2 kurulduktan sonra bir kez **Ana galeriyi yayımla** çalıştırın.
-
-## Web viewer kurtarma
-
-076 ve sonrası için `WEB_GORUNTU_ONAR.bat`, repo içindeki tile verilerini yeniden bilgisayardan yüklemeden viewer/workflow dosyalarını onarır. Actions bittikten sonra `WEB_GORUNTU_KONTROL.bat` kullanın.
-
-## Kritik veriler
-
-Silinmemesi gerekenler:
-
-```text
-config/
-data/
-repos/
-work/
-.venv/
-guncelleme/
-app/
-```
-
-Eski sürüm notları/test raporları `_arsiv` altına taşınabilir. `__pycache__` yeniden üretilebilir.
-
-## Gizli bilgiler
-
-- GitHub tokeni repoya yazılmaz.
-- `config/update_signing_private.key` yalnızca bakım/yayın bilgisayarında tutulur ve halka açık pakete eklenmez.
-- `update_trusted_public.key` halka açık doğrulama anahtarıdır ve programda bulunabilir.
+Token repoya yazilmaz. Kurtarma ZIP'i token veya kaynak slayt icermez. Ozel guncelleme imzalama anahtari `config` altinda kalir ve public GitHub'a gonderilmez.
